@@ -5,7 +5,8 @@ not merely a Git tag or a generated changelog.
 
 ## Branch Strategy
 
-Default for small teams and portfolio projects:
+Preferred default for small teams, portfolio projects and continuously
+delivered services:
 
 - `main` remains releasable and protected;
 - work occurs on short-lived feature, fix or documentation branches;
@@ -30,6 +31,12 @@ Release branch for maintained v1 line    Release branch created for every routin
 The playbook adopts a trunk-oriented workflow for delivery speed and reduced
 merge drift. It does not prohibit release branches where support or deployment
 coordination justifies them.
+
+Traditional Gitflow is the secondary strategy when a documented release model
+requires a persistent `develop` integration line, planned stabilization on
+`release/*` and promotion of completed releases into `main`. See
+[GitHub: Branching Strategies](../github/branching-strategies.md) before
+introducing long-lived branches.
 
 ## Versioning Strategy
 

@@ -31,6 +31,7 @@ Default posture:
 | Document | Covers |
 | --- | --- |
 | [Repository Configuration](./repository-configuration.md) | Visibility, naming, descriptions, topics, documentation and templates |
+| [Branching Strategies](./branching-strategies.md) | Trunk-based default, traditional Gitflow alternative and selection criteria |
 | [Branches, Commits and Pull Requests](./branches-commits-and-pull-requests.md) | Branch policy, protection, CODEOWNERS, commit and review conventions |
 | [Issues, Projects and Releases](./issues-projects-and-releases.md) | Labels, milestones, boards, discussions, tags, releases and release notes |
 | [Actions and Delivery Integration](./actions-and-delivery-integration.md) | Workflow layout, CI/CD integration, Docker registries, reusable automation and runners |

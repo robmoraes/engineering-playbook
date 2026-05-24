@@ -27,6 +27,8 @@ repository that now controls production delivery.
 ## Branches and Collaboration
 
 - [ ] `main` is the default trusted branch.
+- [ ] Trunk-based development is used by default, or the reason for selecting
+  Traditional Gitflow and its protected `develop`/release branches is recorded.
 - [ ] Branch naming follows the shared convention.
 - [ ] Required CI checks run before production-relevant merges.
 - [ ] Direct pushes, force pushes and branch deletion are restricted according

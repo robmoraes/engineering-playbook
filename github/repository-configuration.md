@@ -72,7 +72,10 @@ integration branch and SHOULD remain deployable or publishable after required
 checks pass.
 
 Avoid long-lived branches such as `develop` unless the release model genuinely
-requires a separate integration line and its cost is accepted.
+requires a separate integration line and its cost is accepted. When it does,
+document the choice as
+[Traditional Gitflow](./branching-strategies.md#secondary-model-traditional-gitflow)
+rather than allowing an accidental permanent integration branch.
 
 ## Baseline Repository Files
 

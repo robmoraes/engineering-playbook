@@ -24,6 +24,7 @@ for concise governance and exact repository taxonomy are local conventions.
 | Conventional Commits 1.0.0 | Defines structured commit message prefixes for human and automated consumers. | Adopt Conventional Commits where release/changelog consistency benefits; do not require ceremony without use. |
 | Semantic Versioning 2.0.0 | Defines version semantics for software declaring a public API. | Published contracts may use SemVer; repositories without a contract must not imply it. |
 | Trunk Based Development | Describes development centered on a trunk with short-lived branches and optional release branches. | `main` plus short-lived branches is the default, with release branches when maintenance needs justify them. |
+| Vincent Driessen, *A successful Git branching model* | Defines Gitflow with permanent production and development branches plus feature, release and hotfix branches; its 2020 reflection recommends simpler workflows for continuous delivery and retains Gitflow for explicitly versioned or multi-version products. | Traditional Gitflow is a secondary strategy only when its separate integration and release histories address a documented product or support requirement; `main` replaces the historical `master` branch name. |
 
 ## Source Links
 
@@ -77,6 +78,8 @@ for concise governance and exact repository taxonomy are local conventions.
   <https://semver.org/>
 - Trunk Based Development:
   <https://trunkbaseddevelopment.com/>
+- Vincent Driessen, *A successful Git branching model*:
+  <https://nvie.com/posts/a-successful-git-branching-model/>
 
 ## Local Conventions
 

@@ -5,7 +5,12 @@ releasable while avoiding process that exceeds project risk.
 
 ## Branch Strategy
 
-Default:
+The preferred strategy is
+[Trunk-Based Development](./branching-strategies.md#preferred-model-trunk-based-development).
+Traditional Gitflow is a secondary option only when a repository documents the
+need for its persistent `develop` integration line and release workflow.
+
+Trunk-based default:
 
 ```text
 main                           trusted integration and release source
@@ -20,6 +25,11 @@ Short-lived branches reduce merge drift and make pull requests easier to
 review. Release branches are appropriate where a released line must remain
 supported while `main` continues moving; they are not required for every
 deployment.
+
+Repositories that select
+[Traditional Gitflow](./branching-strategies.md#secondary-model-traditional-gitflow)
+also protect `develop` and applicable `release/*` branches according to their
+integration and release authority.
 
 ## Protection Model
 
