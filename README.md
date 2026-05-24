@@ -2,12 +2,15 @@
 
 Standards, conventions and operational practices for my projects, labs and public portfolio.
 
-For purpose, scope and engineering principles, see [OVERVIEW.md](./OVERVIEW.md).
+For purpose and scope, see [OVERVIEW.md](./OVERVIEW.md). For the human and
+professional principles behind these standards, see
+[Professional Principles](./principles/).
 
 ## Navigation
 
 | Area | Content |
 | --- | --- |
+| [Principles](./principles/) | Mission, user responsibility, ethics and long-term stewardship |
 | [Architecture](./architecture/) | Technical rationale and decision records |
 | [CI/CD](./ci-cd/) | Integration, releases and deployment pipelines |
 | [Docker](./docker/) | Container builds, images and runtime conventions |

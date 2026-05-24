@@ -14,6 +14,7 @@ This repository consolidates the technical patterns I use for:
 - Documentation
 - Repository organization
 - Deployment workflows
+- Professional principles and engineering ethics
 
 The goal is to maintain a consistent and professional engineering approach across all projects and environments.
 
@@ -50,6 +51,7 @@ The repository is intended to document standards and conventions related to:
 - Production deployment practices
 - Operational troubleshooting
 - Architecture rationale
+- Human impact and long-term stewardship of software
 
 ---
 
@@ -59,6 +61,7 @@ The repository is intended to document standards and conventions related to:
 engineering-playbook/
 ├── README.md
 ├── OVERVIEW.md
+├── principles/
 ├── repositories/
 ├── docker/
 ├── github/
@@ -75,6 +78,20 @@ engineering-playbook/
 ---
 
 # Planned Sections
+
+## principles/
+
+Professional principles grounded in the human purpose and consequences of
+software engineering.
+
+Examples:
+
+- personal mission and user-first responsibility;
+- practical engineering ethics;
+- craftsmanship, maintainability and documentation;
+- pragmatic decision making and long-term stewardship.
+
+---
 
 ## repositories/
 
