@@ -261,15 +261,6 @@ Some practices documented here may intentionally favor operational pragmatism ov
 
 ---
 
-# Maintainer
-
-Carlos R Moraes Rodrigues
-
-- GitHub: https://github.com/robmoraes
-- Website: https://carlosmoraesrodrigues.dev.br
-
----
-
 # License
 
 This repository is intended primarily as a public engineering reference and learning resource.

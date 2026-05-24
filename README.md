@@ -19,3 +19,11 @@ For purpose, scope and engineering principles, see [OVERVIEW.md](./OVERVIEW.md).
 | [Repositories](./repositories/) | Repository organization standards |
 | [Runbooks](./runbooks/) | Operational and recovery procedures |
 | [Security](./security/) | Secrets, access and credential practices |
+
+## Maintainer
+
+Carlos R Moraes Rodrigues
+
+- GitHub: https://github.com/robmoraes
+- Docker Hub: https://hub.docker.com/u/carlosmoraesrodrigues
+- Website: https://about.carlosmoraesrodrigues.dev.br/
