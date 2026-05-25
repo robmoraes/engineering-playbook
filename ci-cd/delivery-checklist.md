@@ -32,6 +32,8 @@ changing a production deployment path.
 - [ ] Release version/tag points to trusted validated source.
 - [ ] Version strategy is documented: SemVer where a public contract exists,
   or a stated alternative.
+- [ ] Where a changelog is maintained, notable release changes move from
+  `Unreleased` into a dated, linked release entry.
 - [ ] Release notes identify operational changes, migration requirements and
   rollback constraints.
 - [ ] Published release tags are immutable after release.

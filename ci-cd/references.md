@@ -19,6 +19,7 @@ requires it.
 | Docker Docs, *GitHub Actions* and *Build attestations* | Docker documents image build/push automation and SBOM/provenance attestations. | Publish immutable tagged images and generate provenance where useful for deployment trust. |
 | Docker Docs, *Personal access tokens* and *Deploy a stack to a swarm* | Tokens replace passwords for automation; Swarm stacks are deployed from Compose-form descriptions through manager authority. | Docker Hub publication uses scoped tokens and Swarm deployments are treated as privileged environment changes. |
 | Kubernetes Docs, *Deployments* | Deployments expose rollout status and revision-based rollback operations for application workloads. | Kubernetes rollout checks are initial deployment verification, supplemented by service behavior checks. |
+| Keep a Changelog 1.1.0 | Changelogs are curated for people, group notable changes by version and type, retain an `Unreleased` section and use linkable dated versions. | Versioned projects with consumer or operator impact maintain a root `CHANGELOG.md` in this structure and connect versions to tags or comparisons. |
 | Semantic Versioning 2.0.0 | Version semantics apply to software declaring a public API. | Use SemVer for published contracts; do not imply SemVer guarantees for undocumented internal deploys. |
 | OpenGitOps, *Principles* | GitOps systems are declarative, versioned and immutable, pulled automatically and continuously reconciled. | Reserve the term GitOps for reconciled desired-state delivery, not any Git-triggered script deployment. |
 | The Twelve-Factor App, *Build, release, run* and *Dev/prod parity* | Separate build/release/run stages and keep material environment behavior aligned. | Separate artifacts from environment config and promote the same build through relevant environments. |
@@ -53,6 +54,8 @@ requires it.
   <https://docs.docker.com/engine/swarm/services/>
 - Kubernetes Docs, *Deployments*:
   <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>
+- Keep a Changelog 1.1.0:
+  <https://keepachangelog.com/en/1.1.0/>
 - Semantic Versioning 2.0.0:
   <https://semver.org/>
 - OpenGitOps, *Principles*:
