@@ -82,6 +82,10 @@ Rules:
 - never expose publish tokens to arbitrary pull-request code;
 - publish immutable trace tags and preserve resulting digest;
 - deploy a verified digest according to CI/CD standards.
+- pin and record any external content or asset revision incorporated during
+  image build;
+- when a Git release tag follows publication from `main`, promote the
+  SHA-addressed candidate for that same commit rather than rebuilding it.
 
 For GHCR packages associated with the repository, prefer `GITHUB_TOKEN` with
 only required `packages` permission rather than a separately stored long-lived

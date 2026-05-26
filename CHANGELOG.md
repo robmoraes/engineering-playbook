@@ -9,6 +9,12 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+### Changed
+
+- Clarified that release-tag workflows promote the SHA-addressed candidate
+  produced from `main` rather than rebuilding it.
+- Added controls for pinning and recording external build-time content inputs.
+
 ## [0.2.0] - 2026-05-25
 
 ### Added
