@@ -9,11 +9,7 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
-### Changed
-
-- Clarified that release-tag workflows promote the SHA-addressed candidate
-  produced from `main` rather than rebuilding it.
-- Added controls for pinning and recording external build-time content inputs.
+## [0.3.0] - 2026-05-28
 
 ### Added
 
@@ -21,6 +17,14 @@ than a software API compatibility contract.
   UTC server/backend defaults, frontend timezone selection, IANA timezone
   identifiers, RFC 3339 API contracts, PostgreSQL column-type selection,
   persistence, scheduling, display and testing guidance.
+- Linked the root README to the navigable `engineering-playbook-web` version,
+  including its GitHub repository and Docker Hub image.
+
+### Changed
+
+- Clarified that release-tag workflows promote the SHA-addressed candidate
+  produced from `main` rather than rebuilding it.
+- Added controls for pinning and recording external build-time content inputs.
 
 ## [0.2.0] - 2026-05-25
 
@@ -44,6 +48,7 @@ than a software API compatibility contract.
 - Repository guidance for contribution practices and trunk-based delivery,
   with documented criteria for Gitflow where release needs justify it.
 
-[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/robmoraes/engineering-playbook/releases/tag/v0.1.0
