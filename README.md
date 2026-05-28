@@ -15,7 +15,7 @@ serve as a context memory of engineering standards for AI-assisted
 programming.
 
 - Docker Hub:
-  <https://hub.docker.com/r/carlosmoraesrodrigues/engineering-playbook-web>
+  <https://hub.docker.com/r/robmoraes/engineering-playbook-web>
 - GitHub: <https://github.com/robmoraes/engineering-playbook-web>
 
 ## Navigation
@@ -40,5 +40,5 @@ programming.
 Carlos R Moraes Rodrigues
 
 - GitHub: https://github.com/robmoraes
-- Docker Hub: https://hub.docker.com/u/carlosmoraesrodrigues
-- Website: https://about.carlosmoraesrodrigues.dev.br/
+- Docker Hub: https://hub.docker.com/u/robmoraes
+- Website: https://about.robmoraes.dev.br/
