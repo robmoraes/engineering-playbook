@@ -15,6 +15,13 @@ than a software API compatibility contract.
   produced from `main` rather than rebuilding it.
 - Added controls for pinning and recording external build-time content inputs.
 
+### Added
+
+- Added architecture standards for timezone-safe software design, including
+  UTC server/backend defaults, frontend timezone selection, IANA timezone
+  identifiers, RFC 3339 API contracts, PostgreSQL column-type selection,
+  persistence, scheduling, display and testing guidance.
+
 ## [0.2.0] - 2026-05-25
 
 ### Added

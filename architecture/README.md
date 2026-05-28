@@ -38,6 +38,7 @@ when its constraints, failure modes, cost and operating procedures are known.
 | [Boundaries and Service Design](./boundaries-and-service-design.md) | System boundaries, monolith versus microservices, APIs and data ownership |
 | [Runtime and Platform Topology](./runtime-and-platform-topology.md) | Container-first runtime, ingress, discovery, networks, Swarm and Kubernetes |
 | [State, Reliability and Scale](./state-reliability-and-scale.md) | Stateful workloads, failure domains, HA, distributed systems and scaling |
+| [Time and Timezone Standards](./time-and-timezone-standards.md) | UTC instants, IANA timezones, API contracts, persistence, scheduling and display |
 | [Delivery and Evolution](./delivery-and-evolution.md) | Environments, deployments, observability, technical debt and evolution paths |
 | [Architecture Decisions](./decision-records/README.md) | ADR policy, decision index and template |
 | [References](./references.md) | Source material and adopted conventions |

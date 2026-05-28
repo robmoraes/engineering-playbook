@@ -18,6 +18,11 @@ requirement imposed by the external sources.
 | Docker Docs, *Swarm mode*, *Manage swarm service networks* and *Use Swarm mode routing mesh* | Swarm supplies service deployment, discovery, overlay networking and ingress routing behavior. | Docker Swarm is treated as a practical orchestration option with documented manager, ingress and stateful-storage consequences. |
 | ADR GitHub Organization, *Architectural Decision Records*; Michael Nygard, *Documenting Architecture Decisions* | An ADR captures one significant decision, its rationale and consequences; a collection forms a decision log. | Significant production and platform decisions use lightweight versioned ADRs stored alongside this playbook. |
 | Martin Fowler, *Microservices* and *Monolith First* | Microservices involve independently deployable services and bring tradeoffs; a monolith-first approach can reduce risk while boundaries are learned. | A modular deployable unit is the normal starting point; services are extracted for demonstrated isolation, scaling or ownership benefits. |
+| RFC 3339, *Date and Time on the Internet: Timestamps* and RFC 9557, *Timestamps with Additional Information* | Internet timestamps should be unambiguous and fully qualified; RFC 9557 extends RFC 3339 with optional additional information such as named timezones. | API, log and event timestamps representing instants use RFC 3339 date-time strings with explicit offsets; extended timestamp syntax is used only when all producers and consumers support it. |
+| IANA Time Zone Database, *Theory and pragmatics of the tz code and data* | The tz database records civil time history and predicted future rules using named timezone identifiers. | User, tenant, venue and schedule zones use IANA identifiers instead of timezone abbreviations or fixed offsets. |
+| W3C, *Working with Time and Timezones* | Applications should distinguish instants, field-based times and floating times; future events need a timezone, not merely an offset. | The playbook separates instants, local dates/times, zoned future events, recurrences, durations and calendar periods in schemas and contracts. |
+| PostgreSQL Docs and Wiki, *Date/Time Types* and *Don't Do This* | `timestamp with time zone` represents a point in time stored internally as UTC; PostgreSQL guidance warns against storing UTC in `timestamp without time zone`. | PostgreSQL-backed systems use `timestamptz` for instants and reserve naive date/time fields for intentional local civil values paired with an IANA timezone. |
+| OpenAPI Format Registry, *date-time* and *date* | OpenAPI's `date-time` and `date` formats align with RFC 3339 definitions. | API schemas expose instant versus date-only semantics through OpenAPI formats and explicit timezone fields where needed. |
 
 ## Source Links
 
@@ -53,6 +58,23 @@ requirement imposed by the external sources.
   <https://martinfowler.com/articles/microservices.html>
 - Martin Fowler, *Monolith First*:
   <https://martinfowler.com/bliki/MonolithFirst.html>
+- RFC 3339, *Date and Time on the Internet: Timestamps*:
+  <https://www.rfc-editor.org/rfc/rfc3339>
+- RFC 9557, *Date and Time on the Internet: Timestamps with Additional
+  Information*:
+  <https://www.rfc-editor.org/rfc/rfc9557>
+- IANA Time Zone Database, *Theory and pragmatics of the tz code and data*:
+  <https://data.iana.org/time-zones/theory.html>
+- W3C, *Working with Time and Timezones*:
+  <https://www.w3.org/TR/timezone/>
+- PostgreSQL Docs, *Date/Time Types*:
+  <https://www.postgresql.org/docs/current/datatype-datetime.html>
+- PostgreSQL Wiki, *Don't Do This*:
+  <https://wiki.postgresql.org/wiki/Don%27t_Do_This>
+- OpenAPI Format Registry, *date-time*:
+  <https://spec.openapis.org/registry/format/date-time>
+- OpenAPI Format Registry, *date*:
+  <https://spec.openapis.org/registry/format/date>
 
 ## Using References Responsibly
 

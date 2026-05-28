@@ -33,6 +33,10 @@ Required fields depend on the system, but production event logs SHOULD expose:
 
 Use the identifier conventions in
 [Telemetry and Operations](../naming/telemetry-and-operations.md).
+Timestamps SHOULD follow
+[Architecture: Time and Timezone Standards](../architecture/time-and-timezone-standards.md):
+use RFC 3339 UTC values for operational events unless a different timezone is
+explicitly required and named.
 
 ## Levels and Events
 
