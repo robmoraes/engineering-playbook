@@ -83,19 +83,26 @@ Reference release sequence:
 
 ```text
 1. Merge validated changes to main.
-2. Build and publish immutable SHA-tagged image.
+2. Build and publish an immutable SHA-tagged image from pinned build inputs.
 3. Verify candidate in stg where applicable.
 4. Create release version/tag from the selected source revision.
-5. Alias or publish the same digest with release version.
+5. Alias the already published candidate digest with the release version.
 6. Promote selected digest to prod after authorization.
 7. Verify production and publish release evidence.
 ```
+
+When a Git tag starts the release workflow after `main` already published the
+candidate, that workflow MUST select the candidate for the tag's source
+commit and MUST NOT rebuild the deployable artifact. It should fail if the
+candidate is missing or if the promoted release tag does not resolve to the
+same digest. This preserves the identity proven before the release decision.
 
 Release record:
 
 ```text
 version:        v1.8.2
 source commit:  a13f2c91...
+build inputs:   docs-content@v2.4.1, when applicable
 image digest:   sha256:...
 stg result:     verified or not applicable with reason
 prod deploy:    workflow run/link and timestamp

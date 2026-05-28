@@ -17,6 +17,7 @@ requires it.
 | GitHub Docs, *Secure use reference: self-hosted runners* | Self-hosted runners can be persistently compromised by untrusted workflow code and require careful isolation. | GitHub-hosted runners are the default for public repos; production-connected self-hosted runners never run arbitrary fork code. |
 | Docker Docs, *Multi-stage builds* and *Build cache* | Multi-stage Dockerfiles separate build/runtime content; cache can reuse unchanged work. | Use multi-stage container builds and measured, trust-aware cache optimization. |
 | Docker Docs, *GitHub Actions* and *Build attestations* | Docker documents image build/push automation and SBOM/provenance attestations. | Publish immutable tagged images and generate provenance where useful for deployment trust. |
+| Docker Docs, *Buildx imagetools create* and *inspect* | Buildx can inspect registry manifests and create a new image tag from existing source manifests without an application rebuild. | A tag-triggered release promotes and verifies the SHA candidate digest already published from trusted source. |
 | Docker Docs, *Personal access tokens* and *Deploy a stack to a swarm* | Tokens replace passwords for automation; Swarm stacks are deployed from Compose-form descriptions through manager authority. | Docker Hub publication uses scoped tokens and Swarm deployments are treated as privileged environment changes. |
 | Kubernetes Docs, *Deployments* | Deployments expose rollout status and revision-based rollback operations for application workloads. | Kubernetes rollout checks are initial deployment verification, supplemented by service behavior checks. |
 | Keep a Changelog 1.1.0 | Changelogs are curated for people, group notable changes by version and type, retain an `Unreleased` section and use linkable dated versions. | Versioned projects with consumer or operator impact maintain a root `CHANGELOG.md` in this structure and connect versions to tags or comparisons. |
@@ -46,6 +47,10 @@ requires it.
   <https://docs.docker.com/build/ci/github-actions/>
 - Docker Docs, *Build attestations*:
   <https://docs.docker.com/build/metadata/attestations/>
+- Docker Docs, *Buildx imagetools create*:
+  <https://docs.docker.com/reference/cli/docker/buildx/imagetools/create/>
+- Docker Docs, *Buildx imagetools inspect*:
+  <https://docs.docker.com/reference/cli/docker/buildx/imagetools/inspect/>
 - Docker Docs, *Personal access tokens*:
   <https://docs.docker.com/security/for-developers/access-tokens/>
 - Docker Docs, *Deploy a stack to a swarm*:

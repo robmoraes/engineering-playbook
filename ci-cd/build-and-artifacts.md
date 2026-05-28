@@ -12,6 +12,8 @@ A build MUST be traceable to:
 - dependency lockfiles or dependency resolution inputs;
 - Dockerfile/build definition;
 - base image reference;
+- immutable revision identifiers for downloaded or generated build-time
+  content, schemas, assets or other source repositories;
 - workflow run and builder context;
 - resulting image tag and digest when published.
 
@@ -19,7 +21,15 @@ A build MUST be traceable to:
 Good                                      Avoid
 Image digest linked to source SHA        Image named latest with unknown build source
 Lockfile used in build                   Dependency versions resolved unpredictably
+Static content archive pinned to v2.4.1 Downloading content from main during release build
 ```
+
+A build that imports files from another repository or service has more than
+one source revision. Pin that input to an immutable tag, commit SHA or
+content-addressed object before publishing a release candidate, and retain
+that identifier with the image digest. Rebuilding identical application source
+against a moving documentation, schema or asset branch is a different build,
+even if its release label would otherwise be unchanged.
 
 Perfect bit-for-bit reproducibility is not always attainable immediately.
 Traceability and immutable outputs are the minimum operating requirement.
@@ -114,6 +124,7 @@ For each release candidate or production release, retain:
 ```text
 repository:      acme/orders-api
 source revision: a13f2c91...
+build inputs:    docs-content@v2.4.1, when applicable
 workflow run:    URL or run identifier
 image digest:    sha256:...
 release version: 1.8.2, when applicable

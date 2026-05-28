@@ -60,7 +60,9 @@ Escalate when:
 
 ## Timeline Record
 
-Keep a plain, timestamped record in UTC or explicitly stated timezone:
+Keep a plain, timestamped record in UTC or explicitly stated timezone. Follow
+[Architecture: Time and Timezone Standards](../architecture/time-and-timezone-standards.md)
+when recording or comparing incident times:
 
 ```text
 Incident: INC-2026-005-orders-api-errors

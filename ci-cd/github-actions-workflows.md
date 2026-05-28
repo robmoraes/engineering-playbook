@@ -117,6 +117,67 @@ provenance attached to the pushed image. If a workflow separately publishes
 GitHub artifact attestations, grant only the additional permissions required by
 that attestation action.
 
+## Release Tag Promotion Pattern
+
+When a push to `main` already publishes a SHA-addressed candidate, a later
+version tag for the same commit should promote that candidate instead of
+running `docker/build-push-action` again. This matters even for static
+applications: downloaded content, base images or other build-time inputs may
+change between workflow events unless they were pinned.
+
+A tag-triggered job can authenticate to the registry and perform a checked
+alias operation after validating the tag against the project's recorded
+version:
+
+```yaml
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  promote_release:
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@<full-commit-sha>
+      - name: Verify tag matches recorded version
+        run: ./scripts/verify-release-tag.sh "${{ github.ref_name }}"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@<full-commit-sha>
+      - name: Authenticate to registry
+        uses: docker/login-action@<full-commit-sha>
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Promote published candidate digest
+        shell: bash
+        run: |
+          image="ghcr.io/acme/orders-api"
+          candidate="${image}:sha-${GITHUB_SHA}"
+          release="${image}:${GITHUB_REF_NAME#v}"
+          candidate_digest="$(
+            docker buildx imagetools inspect \
+              --format '{{json .Manifest}}' "$candidate" | jq -r '.digest'
+          )"
+          test -n "$candidate_digest" && test "$candidate_digest" != "null"
+          docker buildx imagetools create --prefer-index=false \
+            --tag "$release" "${image}@${candidate_digest}"
+          release_digest="$(
+            docker buildx imagetools inspect \
+              --format '{{json .Manifest}}' "$release" | jq -r '.digest'
+          )"
+          test "$candidate_digest" = "$release_digest"
+```
+
+The release evidence should retain the tag, application source SHA, immutable
+revision of any external build-time content, candidate tag and resulting
+digest. A release-tag run that performs another application build does not
+satisfy build-once promotion.
+
 ## Deployment Workflow Example
 
 ```yaml

@@ -18,6 +18,8 @@ changing a production deployment path.
 ## Build and Artifact Publication
 
 - [ ] Build uses locked or otherwise controlled dependency inputs.
+- [ ] External build-time content, schemas or assets are pinned to immutable
+  revisions and included in artifact evidence.
 - [ ] Container runtime image contains no secrets and follows container
   security baseline.
 - [ ] One immutable image tag or digest is recorded for the source revision.
@@ -37,6 +39,8 @@ changing a production deployment path.
 - [ ] Release notes identify operational changes, migration requirements and
   rollback constraints.
 - [ ] Published release tags are immutable after release.
+- [ ] A tag-triggered image release promotes the candidate digest built from
+  the same source revision rather than rebuilding the application artifact.
 - [ ] Hotfix procedure preserves source and artifact traceability.
 
 ## Environment and Deployment
