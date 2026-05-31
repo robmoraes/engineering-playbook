@@ -48,6 +48,7 @@ The repository is intended to document standards and conventions related to:
 - Observability
 - Logging
 - Infrastructure decisions
+- Internationalization and localization standards
 - Production deployment practices
 - Operational troubleshooting
 - Architecture rationale
@@ -195,6 +196,7 @@ Examples:
 - Docker Swarm patterns;
 - reverse proxy architecture;
 - high availability tradeoffs;
+- internationalization and localization contracts;
 - storage strategies;
 - cost optimization decisions;
 - infrastructure layout rationale.
