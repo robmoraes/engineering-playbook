@@ -23,6 +23,10 @@ requirement imposed by the external sources.
 | W3C, *Working with Time and Timezones* | Applications should distinguish instants, field-based times and floating times; future events need a timezone, not merely an offset. | The playbook separates instants, local dates/times, zoned future events, recurrences, durations and calendar periods in schemas and contracts. |
 | PostgreSQL Docs and Wiki, *Date/Time Types* and *Don't Do This* | `timestamp with time zone` represents a point in time stored internally as UTC; PostgreSQL guidance warns against storing UTC in `timestamp without time zone`. | PostgreSQL-backed systems use `timestamptz` for instants and reserve naive date/time fields for intentional local civil values paired with an IANA timezone. |
 | OpenAPI Format Registry, *date-time* and *date* | OpenAPI's `date-time` and `date` formats align with RFC 3339 definitions. | API schemas expose instant versus date-only semantics through OpenAPI formats and explicit timezone fields where needed. |
+| IETF BCP 47 and RFC 5646, *Tags for Identifying Languages* | Language tags identify languages and variants using interoperable subtags. | Application language and locale identifiers use BCP 47 tags such as `pt-BR`, `en-US`, `es-419` and `zh-Hant`. |
+| Unicode CLDR Project and UTS #35, *Unicode Locale Data Markup Language* | CLDR provides locale data and LDML specifies structures and algorithms used for locale-sensitive behavior. | Applications rely on platform internationalization libraries and CLDR-backed behavior for formatting, plural rules, display names and collation rather than hard-coded patterns. |
+| ICU Documentation, *Formatting Messages* | MessageFormat supports placeholders and selection among plural or other message variants. | User-facing messages use complete localizable strings with placeholders, plural rules and select rules instead of concatenated fragments. |
+| W3C Internationalization, *Language tags in HTML and XML* and authoring techniques | Web content should identify language and support international authoring practices. | Web applications expose explicit document language and direction, avoid country flags as language identity and treat localization as content behavior, not only text replacement. |
 
 ## Source Links
 
@@ -75,6 +79,20 @@ requirement imposed by the external sources.
   <https://spec.openapis.org/registry/format/date-time>
 - OpenAPI Format Registry, *date*:
   <https://spec.openapis.org/registry/format/date>
+- IETF, *BCP 47 - Tags for Identifying Languages*:
+  <https://datatracker.ietf.org/doc/bcp47/>
+- RFC 5646, *Tags for Identifying Languages*:
+  <https://www.rfc-editor.org/rfc/rfc5646>
+- Unicode CLDR Project:
+  <https://cldr.unicode.org/>
+- Unicode CLDR, *UTS #35: Unicode Locale Data Markup Language*:
+  <https://cldr.unicode.org/index/cldr-spec>
+- ICU Documentation, *Formatting Messages*:
+  <https://unicode-org.github.io/icu/userguide/format_parse/messages/>
+- W3C Internationalization, *Language tags in HTML and XML*:
+  <https://www.w3.org/International/articles/language-tags/>
+- W3C Internationalization, *Authoring techniques*:
+  <https://www.w3.org/International/techniques/authoring-html>
 
 ## Using References Responsibly
 
