@@ -27,6 +27,10 @@ requirement imposed by the external sources.
 | Unicode CLDR Project and UTS #35, *Unicode Locale Data Markup Language* | CLDR provides locale data and LDML specifies structures and algorithms used for locale-sensitive behavior. | Applications rely on platform internationalization libraries and CLDR-backed behavior for formatting, plural rules, display names and collation rather than hard-coded patterns. |
 | ICU Documentation, *Formatting Messages* | MessageFormat supports placeholders and selection among plural or other message variants. | User-facing messages use complete localizable strings with placeholders, plural rules and select rules instead of concatenated fragments. |
 | W3C Internationalization, *Language tags in HTML and XML* and authoring techniques | Web content should identify language and support international authoring practices. | Web applications expose explicit document language and direction, avoid country flags as language identity and treat localization as content behavior, not only text replacement. |
+| GitHub Spec Kit, *Spec-Driven Development* | Spec-driven development puts specifications at the center of AI-assisted work and refines changes through spec, plan, tasks and implementation phases. | The playbook adopts a tool-independent spec-first workflow where specs, plans, tasks and verification artifacts stay aligned through review. |
+| Cucumber, *Behaviour-Driven Development* | BDD emphasizes shared understanding through concrete examples, formulation and automation. | Acceptance examples are used to clarify expected behavior and guide automated checks without requiring every project to use Cucumber. |
+| Martin Fowler, *Specification by Example* | Examples can make behavior easier to understand and verify, but they do not replace collaboration or other requirement techniques. | Specs must combine concrete examples with scope, constraints, contracts and architecture decisions instead of relying on examples alone. |
+| OpenAPI Initiative, *OpenAPI Specification* | OpenAPI provides authoritative machine-readable specifications for HTTP APIs. | API-facing spec-driven changes use OpenAPI or equivalent machine-readable contracts rather than prose-only endpoint descriptions. |
 
 ## Source Links
 
@@ -93,6 +97,16 @@ requirement imposed by the external sources.
   <https://www.w3.org/International/articles/language-tags/>
 - W3C Internationalization, *Authoring techniques*:
   <https://www.w3.org/International/techniques/authoring-html>
+- GitHub Spec Kit, *Spec-Driven Development*:
+  <https://github.github.io/spec-kit/concepts/sdd.html>
+- GitHub Spec Kit, *Quick Start Guide*:
+  <https://github.github.io/spec-kit/quickstart.html>
+- Cucumber, *Behaviour-Driven Development*:
+  <https://cucumber.io/docs/bdd/>
+- Martin Fowler, *Specification By Example*:
+  <https://martinfowler.com/bliki/SpecificationByExample.html>
+- OpenAPI Initiative Publications:
+  <https://spec.openapis.org/>
 
 ## Using References Responsibly
 

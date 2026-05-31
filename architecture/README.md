@@ -40,6 +40,7 @@ when its constraints, failure modes, cost and operating procedures are known.
 | [State, Reliability and Scale](./state-reliability-and-scale.md) | Stateful workloads, failure domains, HA, distributed systems and scaling |
 | [Time and Timezone Standards](./time-and-timezone-standards.md) | UTC instants, IANA timezones, API contracts, persistence, scheduling and display |
 | [Internationalization and Localization Standards](./internationalization-and-localization.md) | Language, locale, message catalogs, formatting, API contracts and localization operations |
+| [Spec-Driven Development Standards](./spec-driven-development.md) | Specification-first workflow, acceptance examples, contracts, implementation plans and drift control |
 | [Delivery and Evolution](./delivery-and-evolution.md) | Environments, deployments, observability, technical debt and evolution paths |
 | [Architecture Decisions](./decision-records/README.md) | ADR policy, decision index and template |
 | [References](./references.md) | Source material and adopted conventions |
