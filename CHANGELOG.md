@@ -9,6 +9,17 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-05-31
+
+### Added
+
+- Added architecture standards for internationalization and localization,
+  including locale selection, message catalogs, formatting, API contracts,
+  persistence, UI accessibility, testing and localization operations.
+- Added spec-driven development standards covering specification-first
+  workflow, acceptance examples, machine-readable contracts, implementation
+  plans, task breakdown, AI-assisted development and drift control.
+
 ## [0.3.1] - 2026-05-28
 
 ### Changed
@@ -54,7 +65,9 @@ than a software API compatibility contract.
 - Repository guidance for contribution practices and trunk-based delivery,
   with documented criteria for Gitflow where release needs justify it.
 
-[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/robmoraes/engineering-playbook/releases/tag/v0.1.0
