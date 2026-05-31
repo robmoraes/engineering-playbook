@@ -23,7 +23,7 @@ programming.
 | Area | Content |
 | --- | --- |
 | [Principles](./principles/) | Mission, user responsibility, ethics and long-term stewardship |
-| [Architecture](./architecture/) | Technical rationale, application standards and decision records |
+| [Architecture](./architecture/) | Technical rationale, application standards, spec-driven workflow and decision records |
 | [CI/CD](./ci-cd/) | Integration, releases and deployment pipelines |
 | [Docker](./docker/) | Container builds, images and runtime conventions |
 | [Examples](./examples/) | Reusable reference implementations |

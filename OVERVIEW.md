@@ -49,6 +49,7 @@ The repository is intended to document standards and conventions related to:
 - Logging
 - Infrastructure decisions
 - Internationalization and localization standards
+- Spec-driven development standards
 - Production deployment practices
 - Operational troubleshooting
 - Architecture rationale
@@ -197,6 +198,7 @@ Examples:
 - reverse proxy architecture;
 - high availability tradeoffs;
 - internationalization and localization contracts;
+- spec-driven development workflow;
 - storage strategies;
 - cost optimization decisions;
 - infrastructure layout rationale.
