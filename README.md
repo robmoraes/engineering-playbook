@@ -34,6 +34,7 @@ programming.
 | [Repositories](./repositories/) | Repository organization standards |
 | [Runbooks](./runbooks/) | Operational and recovery procedures |
 | [Security](./security/) | Secrets, access and credential practices |
+| [Testing](./testing/) | Risk-focused Test Case design, execution evidence and lifecycle standards |
 
 ## Maintainer
 

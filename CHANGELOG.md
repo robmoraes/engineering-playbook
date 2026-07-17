@@ -9,6 +9,12 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+### Added
+
+- Added software testing standards for concise risk-focused Test Cases,
+  behavior-oriented scenarios, test data, traceability, automation, execution
+  evidence and lifecycle management, with a reusable Markdown template.
+
 ## [0.3.2] - 2026-05-31
 
 ### Added

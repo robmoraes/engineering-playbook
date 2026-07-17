@@ -7,6 +7,7 @@ This repository consolidates the technical patterns I use for:
 - Backend engineering
 - Containerization
 - CI/CD
+- Software testing
 - Infrastructure
 - Docker Swarm
 - Observability
@@ -40,6 +41,7 @@ The repository is intended to document standards and conventions related to:
 - Repository naming
 - Docker image naming
 - GitHub Actions
+- Software testing and Test Case standards
 - Secrets management
 - CI/CD pipelines
 - Environment variable conventions
@@ -72,6 +74,7 @@ engineering-playbook/
 ├── observability/
 ├── infrastructure/
 ├── security/
+├── testing/
 ├── architecture/
 ├── runbooks/
 └── examples/
@@ -169,6 +172,21 @@ Examples:
 - environment variables;
 - domains;
 - CI/CD pipelines.
+
+---
+
+## testing/
+
+Software testing and reusable Test Case standards.
+
+Examples:
+
+- risk-focused Test Case design;
+- behavior-oriented scenarios;
+- test data and preconditions;
+- requirement and risk traceability;
+- execution records and evidence;
+- automation and test maintenance.
 
 ---
 
