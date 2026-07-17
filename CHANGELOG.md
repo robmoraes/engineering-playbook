@@ -9,6 +9,14 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-07-17
+
+### Added
+
+- Added software testing standards for concise risk-focused Test Cases,
+  behavior-oriented scenarios, test data, traceability, automation, execution
+  evidence and lifecycle management, with a reusable Markdown template.
+
 ## [0.3.2] - 2026-05-31
 
 ### Added
@@ -65,7 +73,8 @@ than a software API compatibility contract.
 - Repository guidance for contribution practices and trunk-based delivery,
   with documented criteria for Gitflow where release needs justify it.
 
-[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.2...HEAD
+[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.2.0...v0.3.0

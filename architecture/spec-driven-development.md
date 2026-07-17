@@ -308,6 +308,9 @@ Specs, ADRs and tests have different jobs:
 Do not hide architecture decisions inside a spec. Do not use ADRs as feature
 requirements. Do not rely on tests alone to explain product intent.
 
+Maintained verification cases derived from specifications MUST follow
+[Test Case Standards](../testing/test-case-standards.md).
+
 ## Pull Request Expectations
 
 A pull request implementing a spec-driven change SHOULD include:

@@ -42,6 +42,7 @@ integrated deployment should not be fragmented into unexplained snippets.
 | Runtime platform | [Templates: Platform](./templates/platform/) | Swarm stacks, reverse proxy, Traefik, networking, storage and future Kubernetes |
 | Telemetry | [Templates: Observability](./templates/observability/) | Prometheus, Loki, Grafana, structured logging and SLO/alerts |
 | Security and configuration | [Templates: Security](./templates/security/) | Environment configuration, secrets interfaces and hardening controls |
+| Software testing | [Templates: Testing](./templates/testing/) | Reusable behavior-oriented Test Case artifacts |
 | Provisioning | [Templates: Infrastructure as Code](./templates/infrastructure-as-code/) | Infrastructure modules, environment topology and cloud foundations |
 | Integrated systems | [Reference Implementations](./reference-implementations/) | Local lab, small production and platform capability examples |
 | Operations | [Operational Scenarios](./operational-scenarios/) | Deployment failure, routing/TLS, data recovery and incident response |
