@@ -59,6 +59,8 @@ Default position:
 
 ## Related Standards
 
+- Whole-lifecycle ownership and learning from operational feedback:
+  [DevOps Standards](../devops/README.md).
 - Signals, alerts and diagnostic correlation:
   [Observability Standards](../observability/README.md).
 - Topology, state and infrastructure operation:

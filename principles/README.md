@@ -42,6 +42,9 @@ The default posture in this playbook is:
 
 Principles matter only when they change engineering behavior:
 
+- Shared ownership, delivery flow and continuous improvement translate these
+  responsibilities into an operating model. See
+  [DevOps Standards](../devops/README.md).
 - Architecture is evaluated by human consequences as well as topology and
   scale. See [Architecture Standards](../architecture/README.md).
 - Delivery automation should reduce repetitive risk and make changes

@@ -11,6 +11,7 @@ Track enough pipeline information to answer:
 - Which source and artifact were deployed?
 - How often do validation, publication or deployment workflows fail?
 - How long does change validation and production delivery take?
+- How much delivery work is unplanned correction after production incidents?
 - Which environments currently run which image digest?
 - How frequently are rollbacks or failed deployments occurring?
 
@@ -20,13 +21,18 @@ Useful indicators:
 | --- | --- |
 | Build/test failure rate | Identify flaky or degraded validation |
 | Workflow duration by stage | Find slow feedback and cost hotspots |
+| Change lead time | Expose elapsed delivery time, queues and oversized changes |
 | Deployment frequency | Understand delivery behavior, not performance alone |
-| Deployment failure/rollback rate | Improve release safety |
-| Time to recover failed deployment | Validate rollback/runbook quality |
+| Change fail rate | Improve release safety |
+| Failed deployment recovery time | Validate rollback and corrective-delivery quality |
+| Deployment rework rate | Expose delivery capacity consumed by incident-driven changes |
 | Current deployed digest per environment | Incident traceability |
 
 Pipeline metrics should inform improvement, not encourage unsafe delivery speed
 or punishment for necessary controls.
+
+The five DORA delivery measures and their usage guardrails are defined in
+[DevOps: Feedback, Measurement and Learning](../devops/feedback-measurement-and-learning.md).
 
 ## Failure Handling
 

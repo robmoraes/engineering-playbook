@@ -61,6 +61,8 @@ Default position:
 
 ## Related Standards
 
+- Delivery feedback, measurement guardrails and continuous learning:
+  [DevOps: Feedback, Measurement and Learning](../devops/feedback-measurement-and-learning.md).
 - Runtime topology and operational access:
   [Infrastructure Standards](../infrastructure/README.md).
 - Reliability and architecture decisions:

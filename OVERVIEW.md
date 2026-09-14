@@ -7,6 +7,7 @@ This repository consolidates the technical patterns I use for:
 - Backend engineering
 - Containerization
 - CI/CD
+- DevOps operating model
 - Software testing
 - Infrastructure
 - Docker Swarm
@@ -39,6 +40,7 @@ Instead of treating infrastructure and delivery as isolated scripts or ad-hoc de
 The repository is intended to document standards and conventions related to:
 
 - Repository naming
+- DevOps ownership, flow, feedback and improvement
 - Docker image naming
 - GitHub Actions
 - Software testing and Test Case standards
@@ -66,6 +68,7 @@ engineering-playbook/
 ├── README.md
 ├── OVERVIEW.md
 ├── principles/
+├── devops/
 ├── repositories/
 ├── docker/
 ├── github/
@@ -95,6 +98,21 @@ Examples:
 - practical engineering ethics;
 - craftsmanship, maintainability and documentation;
 - pragmatic decision making and long-term stewardship.
+
+---
+
+## devops/
+
+Shared operating standards for delivering, operating and improving software.
+
+Examples:
+
+- whole-lifecycle ownership and cross-functional collaboration;
+- visible value streams, small batches and limited work in progress;
+- continuous integration and delivery as working practices;
+- delivery feedback, DORA metrics and continuous learning;
+- product-oriented platforms, self-service and controlled automation;
+- relationship between DevOps and future SRE standards.
 
 ---
 
@@ -286,6 +304,7 @@ The objective is to document practical engineering decisions that prioritize:
 - maintainability;
 - operational clarity;
 - consistency;
+- shared ownership and continuous improvement;
 - simplicity when possible;
 - scalability when necessary;
 - production-oriented thinking.

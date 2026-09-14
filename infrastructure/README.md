@@ -65,6 +65,8 @@ Default position:
 
 ## Related Standards
 
+- Platform product thinking and automation boundaries:
+  [DevOps: Platform and Automation](../devops/platform-and-automation.md).
 - Runtime and service design: [Architecture Standards](../architecture/README.md).
 - Image/runtime and orchestration usage: [Docker Standards](../docker/README.md).
 - Artifact promotion and deployments: [CI/CD Standards](../ci-cd/README.md).
