@@ -24,6 +24,7 @@ programming.
 | --- | --- |
 | [Principles](./principles/) | Mission, user responsibility, ethics and long-term stewardship |
 | [DevOps](./devops/) | Shared ownership, delivery flow, feedback, automation and continuous improvement |
+| [SRE](./sre/) | Service-level objectives, production readiness, sustainable response and reliability engineering |
 | [Architecture](./architecture/) | Technical rationale, application standards, spec-driven workflow and decision records |
 | [CI/CD](./ci-cd/) | Integration, releases and deployment pipelines |
 | [Docker](./docker/) | Container builds, images and runtime conventions |

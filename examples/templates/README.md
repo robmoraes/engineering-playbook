@@ -24,6 +24,7 @@ Each template MUST document:
 | [delivery](./delivery/) | GitHub Actions, image publishing, deployment and rollback workflows |
 | [platform](./platform/) | Swarm, reverse proxy, Traefik, networks, storage and future Kubernetes |
 | [observability](./observability/) | Telemetry stack, dashboards, alerts, logging pipeline and SLO material |
+| [sre](./sre/) | Service reliability and production readiness records |
 | [security](./security/) | Secret/configuration boundaries and runtime hardening |
 | [testing](./testing/) | Risk-focused Test Case definitions and related test artifacts |
 | [infrastructure-as-code](./infrastructure-as-code/) | Provisioning modules and environment definitions |

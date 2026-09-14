@@ -84,6 +84,11 @@ Response: error-budget burn alert and investigation runbook
 Do not define SLOs solely from easy infrastructure metrics such as CPU use.
 CPU can explain risk; it rarely describes whether users completed an order.
 
+[SRE: Service-Level Management](../sre/service-level-management.md) owns target
+selection, error-budget policy and reliability decisions. This observability
+standard owns the telemetry and alert implementation that makes those
+decisions trustworthy.
+
 ## RED and USE Views
 
 | Method | Use for | Signals |

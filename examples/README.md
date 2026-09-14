@@ -41,6 +41,7 @@ integrated deployment should not be fragmented into unexplained snippets.
 | Delivery automation | [Templates: Delivery](./templates/delivery/) | GitHub Actions, image publishing, deployment and rollback workflows |
 | Runtime platform | [Templates: Platform](./templates/platform/) | Swarm stacks, reverse proxy, Traefik, networking, storage and future Kubernetes |
 | Telemetry | [Templates: Observability](./templates/observability/) | Prometheus, Loki, Grafana, structured logging and SLO/alerts |
+| Service reliability | [Templates: SRE](./templates/sre/) | Service Reliability Records and Production Readiness Reviews |
 | Security and configuration | [Templates: Security](./templates/security/) | Environment configuration, secrets interfaces and hardening controls |
 | Software testing | [Templates: Testing](./templates/testing/) | Reusable behavior-oriented Test Case artifacts |
 | Provisioning | [Templates: Infrastructure as Code](./templates/infrastructure-as-code/) | Infrastructure modules, environment topology and cloud foundations |

@@ -63,6 +63,8 @@ Default position:
 
 - Delivery feedback, measurement guardrails and continuous learning:
   [DevOps: Feedback, Measurement and Learning](../devops/feedback-measurement-and-learning.md).
+- Reliability targets, error-budget policy and paging decisions:
+  [SRE: Service-Level Management](../sre/service-level-management.md).
 - Runtime topology and operational access:
   [Infrastructure Standards](../infrastructure/README.md).
 - Reliability and architecture decisions:

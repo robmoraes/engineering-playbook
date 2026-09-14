@@ -61,6 +61,8 @@ Default position:
 
 - Whole-lifecycle ownership and learning from operational feedback:
   [DevOps Standards](../devops/README.md).
+- Support models, incident policy and reliability learning:
+  [SRE: On-Call, Incidents and Learning](../sre/on-call-incidents-and-learning.md).
 - Signals, alerts and diagnostic correlation:
   [Observability Standards](../observability/README.md).
 - Topology, state and infrastructure operation:

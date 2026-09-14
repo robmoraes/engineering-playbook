@@ -40,7 +40,7 @@ changing the model.
 Failed deployment recovery time measures recovery from a failed change. It is
 not a substitute for measuring recovery from infrastructure, dependency,
 security or other incidents. Detailed service reliability measurement belongs
-to the future SRE standard.
+to [SRE: Service-Level Management](../sre/service-level-management.md).
 
 ## Measurement Guardrails
 

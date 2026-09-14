@@ -60,13 +60,13 @@ a more specific discipline for defining, measuring and operating reliability
 within that model.
 
 This section requires teams to consider production outcomes, recovery and
-operational sustainability. A future SRE standard will own detailed guidance
-for service criticality, SLIs/SLOs, error-budget policy, on-call models,
-operational toil, capacity and reliability reviews. Until then, existing
+operational sustainability. [SRE Standards](../sre/README.md) own detailed
+guidance for service context, SLIs/SLOs, error-budget policy, on-call models,
+operational toil, capacity and reliability reviews. Existing
 [Observability](../observability/README.md),
 [Infrastructure](../infrastructure/README.md) and
 [Runbook](../runbooks/README.md) standards remain authoritative for their
-respective controls.
+implementation mechanics.
 
 Shared ownership does not require every developer to hold production
 administrator access or participate in the same on-call rotation. The access,
@@ -104,6 +104,8 @@ explicit authority boundaries.
 - Runtime and platform capabilities:
   [Infrastructure Standards](../infrastructure/README.md).
 - Production evidence: [Observability Standards](../observability/README.md).
+- Reliability objectives, readiness and sustainable response:
+  [SRE Standards](../sre/README.md).
 - Embedded delivery and runtime protection:
   [Security Standards](../security/README.md).
 - Incident and recovery procedures: [Operational Runbooks](../runbooks/README.md).

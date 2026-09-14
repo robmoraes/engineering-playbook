@@ -59,6 +59,8 @@ time.
 
 - Shared ownership, delivery flow and improvement measurement are defined in
   [DevOps Standards](../devops/README.md).
+- Production readiness, rollout risk and reliability state are defined in
+  [SRE: Production Readiness and Change](../sre/production-readiness-and-change.md).
 - Names for workflows, jobs, branches, tags and environments are defined in
   [Naming: Automation and Environments](../naming/automation-and-environments.md)
   and [Naming: Source Control and Artifacts](../naming/source-control-and-artifacts.md).

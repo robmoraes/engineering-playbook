@@ -17,7 +17,7 @@ than a certification model or a mandatory organization design.
 | DORA, *Generative organizational culture* | High-trust cultures emphasize information flow, cooperation, shared risk, inquiry after failure and safe experimentation. | Surface bad news early, use blameless technical inquiry and share lifecycle risks without making ownership anonymous. |
 | CNCF TAG App Delivery, *Platforms White Paper* and *Platform Engineering Maturity Model* | Platforms curate capabilities around internal-user needs, support self-service, reduce cognitive load and require product thinking and intentional maturity. | Introduce paved paths and shared capabilities only for verified consumers, with secure defaults, ownership, feedback and escape paths. |
 | NIST SP 800-218, *Secure Software Development Framework (SSDF) Version 1.1* | Secure development practices should be integrated into each SDLC implementation to reduce vulnerabilities, impact and recurrence. | Security is part of design, validation, delivery and learning rather than a final downstream gate. |
-| Google, *How SRE Relates to DevOps* | DevOps is a broad whole-lifecycle collaboration philosophy; SRE supplies more opinionated service-operation practices and reliability mechanisms. | DevOps is the baseline operating model; a future SRE section will own detailed reliability policy without duplicating this section. |
+| Google, *How SRE Relates to DevOps* | DevOps is a broad whole-lifecycle collaboration philosophy; SRE supplies more opinionated service-operation practices and reliability mechanisms. | DevOps is the baseline operating model; the SRE section owns detailed reliability policy without duplicating this section. |
 | Google SRE, *Postmortem Culture: Learning from Failure* | Blameless postmortems examine contributing conditions and produce preventive action rather than scapegoating. | Material failures receive technically specific review and owned follow-up through the runbook standard. |
 
 ## Source Links
@@ -70,8 +70,8 @@ than a certification model or a mandatory organization design.
   playbook does not require an internal developer platform for small projects.
 - NIST SSDF 1.1 is referenced because it is the current final SSDF publication
   at this review; draft revisions do not silently change the local baseline.
-- SRE is adjacent to and compatible with DevOps, but detailed SRE controls are
-  intentionally reserved for a future dedicated standard.
+- SRE is adjacent to and compatible with DevOps; detailed controls are defined
+  in [SRE Standards](../sre/README.md).
 
 ## Using References Responsibly
 
