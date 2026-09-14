@@ -174,9 +174,9 @@ without creating disproportionate dependency.
 ## Relationship To SRE
 
 DevOps treats repeated friction and unsafe manual work as candidates for
-improvement. A future SRE standard will define operational toil more narrowly
-and connect it to reliability-team capacity, service objectives and on-call
-sustainability.
+improvement. [SRE: Toil, Capacity and Overload](../sre/toil-capacity-and-overload.md)
+defines operational toil more narrowly and connects it to engineering
+capacity, service objectives and on-call sustainability.
 
 ## Platform Review Questions
 

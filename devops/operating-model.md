@@ -139,7 +139,8 @@ that does not exist.
 This operating model establishes collaboration and whole-lifecycle
 responsibility. SRE adds an opinionated reliability model for selected
 services, including service-level objectives, error budgets, operational work
-limits and sustainable response.
+limits and sustainable response. Apply it through
+[SRE Standards](../sre/README.md).
 
 DevOps does not require a separate SRE team. Where one exists, it partners with
 service teams; it does not receive an unfinished system and inherit all

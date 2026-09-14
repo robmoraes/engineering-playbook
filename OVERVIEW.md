@@ -8,6 +8,7 @@ This repository consolidates the technical patterns I use for:
 - Containerization
 - CI/CD
 - DevOps operating model
+- Site Reliability Engineering
 - Software testing
 - Infrastructure
 - Docker Swarm
@@ -41,6 +42,7 @@ The repository is intended to document standards and conventions related to:
 
 - Repository naming
 - DevOps ownership, flow, feedback and improvement
+- Service-level objectives, error budgets and production readiness
 - Docker image naming
 - GitHub Actions
 - Software testing and Test Case standards
@@ -69,6 +71,7 @@ engineering-playbook/
 ├── OVERVIEW.md
 ├── principles/
 ├── devops/
+├── sre/
 ├── repositories/
 ├── docker/
 ├── github/
@@ -112,7 +115,21 @@ Examples:
 - continuous integration and delivery as working practices;
 - delivery feedback, DORA metrics and continuous learning;
 - product-oriented platforms, self-service and controlled automation;
-- relationship between DevOps and future SRE standards.
+- relationship between DevOps and SRE standards.
+
+---
+
+## sre/
+
+Practical service-reliability standards for production operation and change.
+
+Examples:
+
+- critical user journeys, SLIs, SLOs and error-budget policy;
+- service reliability records and production readiness reviews;
+- actionable paging, support models, incidents and postmortems;
+- operational toil, capacity, overload and graceful degradation;
+- reliability testing, game days, backup restore and recovery evidence.
 
 ---
 
@@ -305,6 +322,7 @@ The objective is to document practical engineering decisions that prioritize:
 - operational clarity;
 - consistency;
 - shared ownership and continuous improvement;
+- measurable reliability and sustainable operations;
 - simplicity when possible;
 - scalability when necessary;
 - production-oriented thinking.

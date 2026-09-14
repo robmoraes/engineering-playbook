@@ -97,7 +97,8 @@ Evaluate a dedicated SRE practice when one or more apply:
 - [ ] Capacity, overload or dependency risk requires continuous engineering.
 - [ ] Several services need a consistent reliability review or support model.
 
-Until a dedicated SRE standard exists, use the reliability guidance in
+When a trigger applies, use the [SRE Standards](../sre/README.md) with the
+reliability implementation guidance in
 [Observability](../observability/README.md),
 [Infrastructure](../infrastructure/README.md) and
 [Runbooks](../runbooks/README.md).

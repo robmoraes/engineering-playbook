@@ -9,12 +9,18 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-09-14
+
 ### Added
 
 - Added DevOps standards covering whole-lifecycle ownership, value-stream
   flow, small batches, continuous delivery, DORA delivery metrics, learning
   culture, platform product thinking, controlled automation and an adoption
-  checklist, with an explicit boundary for future SRE standards.
+  checklist, with an explicit boundary and relationship to SRE standards.
+- Added practical SRE standards covering service reliability records, SLIs,
+  SLOs, error budgets, production readiness, safe change, on-call and incident
+  response, toil, capacity, overload, reliability testing and recovery, with
+  copyable operational templates and a Google SRE reading map.
 
 ## [0.4.0] - 2026-07-17
 
@@ -80,7 +86,8 @@ than a software API compatibility contract.
 - Repository guidance for contribution practices and trunk-based delivery,
   with documented criteria for Gitflow where release needs justify it.
 
-[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.0...v0.3.1
