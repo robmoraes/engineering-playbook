@@ -9,6 +9,13 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+### Added
+
+- Added DevOps standards covering whole-lifecycle ownership, value-stream
+  flow, small batches, continuous delivery, DORA delivery metrics, learning
+  culture, platform product thinking, controlled automation and an adoption
+  checklist, with an explicit boundary for future SRE standards.
+
 ## [0.4.0] - 2026-07-17
 
 ### Added
