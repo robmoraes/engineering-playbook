@@ -1,5 +1,7 @@
 # Engineering Playbook
 
+![Engineering Playbook cover with an open manual connecting software infrastructure, security, delivery and user-interface concepts](./assets/social-preview/engineering-playbook-social-preview.jpg)
+
 Standards, conventions and operational practices for my projects, labs and public portfolio.
 
 For purpose and scope, see [OVERVIEW.md](./OVERVIEW.md). For the human and
@@ -38,6 +40,11 @@ programming.
 | [Runbooks](./runbooks/) | Operational and recovery procedures |
 | [Security](./security/) | Secrets, access and credential practices |
 | [Testing](./testing/) | Risk-focused Test Case design, execution evidence and lifecycle standards |
+
+## Social Preview
+
+The repository cover and instructions for configuring link previews are in
+[Social Preview Assets](./assets/social-preview/README.md).
 
 ## Maintainer
 
