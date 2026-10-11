@@ -9,6 +9,7 @@ This repository consolidates the technical patterns I use for:
 - CI/CD
 - DevOps operating model
 - Site Reliability Engineering
+- User experience and accessible screen design
 - Software testing
 - Infrastructure
 - Docker Swarm
@@ -43,6 +44,7 @@ The repository is intended to document standards and conventions related to:
 - Repository naming
 - DevOps ownership, flow, feedback and improvement
 - Service-level objectives, error budgets and production readiness
+- User journeys, forms, action feedback and accessibility
 - Docker image naming
 - GitHub Actions
 - Software testing and Test Case standards
@@ -72,6 +74,7 @@ engineering-playbook/
 ├── principles/
 ├── devops/
 ├── sre/
+├── ux/
 ├── repositories/
 ├── docker/
 ├── github/
@@ -130,6 +133,21 @@ Examples:
 - actionable paging, support models, incidents and postmortems;
 - operational toil, capacity, overload and graceful degradation;
 - reliability testing, game days, backup restore and recovery evidence.
+
+---
+
+## ux/
+
+Practical interface standards for understandable and accessible user journeys,
+including projects without dedicated UX and design support.
+
+Examples:
+
+- task discovery, journey decisions and information hierarchy;
+- efficient registration, editing and repeated data entry;
+- explicit action semantics, saving, feedback and recovery;
+- WCAG 2.2 AA adoption and manual accessibility checks;
+- lightweight usability evaluation and copyable screen briefs.
 
 ---
 

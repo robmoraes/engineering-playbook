@@ -58,6 +58,10 @@ broken. User-first engineering considers:
 Reliability is part of usability. A workflow that is elegant when healthy but
 unrecoverable when interrupted is not complete.
 
+Apply these principles to concrete screens through
+[UX And Screen Design Standards](../ux/README.md), including forms, action
+feedback, accessibility and validation with users.
+
 ## Review Questions
 
 Before accepting a user-facing change, ask:

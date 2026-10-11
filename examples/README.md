@@ -44,6 +44,7 @@ integrated deployment should not be fragmented into unexplained snippets.
 | Service reliability | [Templates: SRE](./templates/sre/) | Service Reliability Records and Production Readiness Reviews |
 | Security and configuration | [Templates: Security](./templates/security/) | Environment configuration, secrets interfaces and hardening controls |
 | Software testing | [Templates: Testing](./templates/testing/) | Reusable behavior-oriented Test Case artifacts |
+| User experience | [Templates: UX](./templates/ux/) | Screen and journey briefs with a customer registration example |
 | Provisioning | [Templates: Infrastructure as Code](./templates/infrastructure-as-code/) | Infrastructure modules, environment topology and cloud foundations |
 | Integrated systems | [Reference Implementations](./reference-implementations/) | Local lab, small production and platform capability examples |
 | Operations | [Operational Scenarios](./operational-scenarios/) | Deployment failure, routing/TLS, data recovery and incident response |
