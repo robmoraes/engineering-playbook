@@ -9,6 +9,14 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+### Added
+
+- Added UX and screen design standards covering user journeys, information
+  hierarchy, efficient forms, action feedback, error recovery, accessibility
+  and usability evaluation, with a delivery checklist, copyable screen brief
+  and customer registration example based on W3C, GOV.UK and Nielsen Norman
+  Group guidance.
+
 ## [0.5.0] - 2026-09-14
 
 ### Added

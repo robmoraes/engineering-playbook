@@ -78,6 +78,8 @@ is not an accumulating execution log.
 
 ## Related Standards
 
+- User-facing acceptance criteria, accessibility checks and usability evidence:
+  [UX: Evaluation and Validation](../ux/evaluation-and-validation.md).
 - Specifications and acceptance examples are defined in
   [Architecture: Spec-Driven Development](../architecture/spec-driven-development.md).
 - Pipeline test execution and evidence are governed by

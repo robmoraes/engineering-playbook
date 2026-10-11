@@ -47,6 +47,8 @@ Principles matter only when they change engineering behavior:
   [DevOps Standards](../devops/README.md).
 - Architecture is evaluated by human consequences as well as topology and
   scale. See [Architecture Standards](../architecture/README.md).
+- User journeys, screen behavior and accessible interaction make user-first
+  principles concrete. See [UX Standards](../ux/README.md).
 - Delivery automation should reduce repetitive risk and make changes
   traceable. See [CI/CD Standards](../ci-cd/README.md).
 - Operational visibility should enable responsible response to user-affecting

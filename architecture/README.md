@@ -62,3 +62,9 @@ Architecture evolves through decisions, not silent drift. A change that adds a
 datastore, public endpoint, orchestrator, asynchronous delivery path,
 cross-service dependency, production failure domain or significant recurring
 cost SHOULD include an ADR or update to the topology documentation.
+
+## Related Standards
+
+- User journeys, screen behavior and accessible interaction:
+  [UX And Screen Design Standards](../ux/README.md).
+- Verification of observable behavior: [Testing Standards](../testing/README.md).

@@ -27,6 +27,7 @@ Each template MUST document:
 | [sre](./sre/) | Service reliability and production readiness records |
 | [security](./security/) | Secret/configuration boundaries and runtime hardening |
 | [testing](./testing/) | Risk-focused Test Case definitions and related test artifacts |
+| [ux](./ux/) | Screen and journey briefs, action contracts and a customer registration example |
 | [infrastructure-as-code](./infrastructure-as-code/) | Provisioning modules and environment definitions |
 
 ## Template Lifecycle
