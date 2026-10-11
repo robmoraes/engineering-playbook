@@ -71,6 +71,7 @@ The repository is intended to document standards and conventions related to:
 engineering-playbook/
 ├── README.md
 ├── OVERVIEW.md
+├── assets/
 ├── principles/
 ├── devops/
 ├── sre/
@@ -92,6 +93,9 @@ engineering-playbook/
 ---
 
 # Planned Sections
+
+Presentation artwork and social preview setup notes are maintained under
+[assets/social-preview](./assets/social-preview/README.md).
 
 ## principles/
 

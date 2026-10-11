@@ -9,6 +9,11 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+### Added
+
+- Added an illustrated repository cover and a GitHub-ready social preview
+  image, with upload instructions and portfolio-platform limitations.
+
 ## [0.6.0] - 2026-10-11
 
 ### Added
