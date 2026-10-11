@@ -9,6 +9,8 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-11
+
 ### Added
 
 - Added UX and screen design standards covering user journeys, information
@@ -94,7 +96,8 @@ than a software API compatibility contract.
 - Repository guidance for contribution practices and trunk-based delivery,
   with documented criteria for Gitflow where release needs justify it.
 
-[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.1...v0.3.2
