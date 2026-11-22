@@ -32,6 +32,10 @@ than a software API compatibility contract.
 - Added a two-version PostgreSQL migration rehearsal covering cross-version
   reads and writes, a resumable backfill and the application rollback window
   ([#16](https://github.com/robmoraes/engineering-playbook/issues/16)).
+- Added a Testing guide for choosing unit, integration, contract and
+  end-to-end checks by reservation risk and deciding which failures block
+  merge, promotion or rollout
+  ([#17](https://github.com/robmoraes/engineering-playbook/issues/17)).
 
 ## [0.6.0] - 2026-10-11
 
