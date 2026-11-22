@@ -43,7 +43,7 @@ integrated deployment should not be fragmented into unexplained snippets.
 | Telemetry | [Templates: Observability](./templates/observability/) | Prometheus, Loki, Grafana, structured logging and SLO/alerts |
 | Service reliability | [Templates: SRE](./templates/sre/) | Service Reliability Records and Production Readiness Reviews |
 | Security and configuration | [Templates: Security](./templates/security/) | Environment configuration, secrets interfaces and hardening controls |
-| Software testing | [Templates: Testing](./templates/testing/) | Reusable behavior-oriented Test Case artifacts |
+| Software testing | [Testing templates](./templates/testing/) and [database snippets](./snippets/databases/#test-the-last-available-slot) | Behavior-oriented Test Cases and a runnable PostgreSQL contention test |
 | User experience | [Templates: UX](./templates/ux/) | Screen and journey briefs with a customer registration example |
 | Provisioning | [Templates: Infrastructure as Code](./templates/infrastructure-as-code/) | Infrastructure modules, environment topology and cloud foundations |
 | Integrated systems | [Reference Implementations](./reference-implementations/) | Local lab, small production and platform capability examples |
