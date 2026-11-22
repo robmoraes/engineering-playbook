@@ -29,6 +29,7 @@ programming.
 | [SRE](./sre/) | Service-level objectives, production readiness, sustainable response and reliability engineering |
 | [Architecture](./architecture/) | Technical rationale, application standards, spec-driven workflow and decision records |
 | [Software Design](./software-design/) | Business rule ownership, shared application behavior and concurrency guarantees |
+| [Databases](./databases/) | Relational constraints, reservation transactions and concurrent writes in PostgreSQL |
 | [UX](./ux/) | User journeys, intuitive screens, efficient forms, accessible interaction and usable recovery |
 | [CI/CD](./ci-cd/) | Integration, releases and deployment pipelines |
 | [Docker](./docker/) | Container builds, images and runtime conventions |

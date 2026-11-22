@@ -6,6 +6,7 @@ This repository consolidates the technical patterns I use for:
 
 - Backend engineering
 - Software design and maintenance
+- Database design for applications
 - Containerization
 - CI/CD
 - DevOps operating model
@@ -60,6 +61,7 @@ The repository is intended to document standards and conventions related to:
 - Internationalization and localization standards
 - Spec-driven development standards
 - Business rule placement and enforcement across application entry points
+- Reservation schemas, relational constraints and transaction outcomes
 - Production deployment practices
 - Operational troubleshooting
 - Architecture rationale
@@ -89,6 +91,7 @@ engineering-playbook/
 ├── testing/
 ├── architecture/
 ├── software-design/
+├── databases/
 ├── runbooks/
 └── examples/
 ```
@@ -315,6 +318,15 @@ Examples:
 The [Software Design book](./software-design/README.md) guides implementation
 inside an application. Its first chapter follows a reservation rule through
 an API, a worker and the database write that protects the final slot.
+
+---
+
+## databases/
+
+The [Databases book](./databases/README.md) connects application rules to
+database guarantees. Its [reservation exercise](./databases/reservation-schema.md)
+uses two PostgreSQL sessions to show who owns the last slot after either a
+commit or a rollback.
 
 ---
 
