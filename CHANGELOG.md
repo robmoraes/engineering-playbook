@@ -13,6 +13,9 @@ than a software API compatibility contract.
 
 - Added an illustrated repository cover and a GitHub-ready social preview
   image, with upload instructions and portfolio-platform limitations.
+- Started the Software Design book with business rule placement, a concurrent
+  reservation example and verification guidance
+  ([#11](https://github.com/robmoraes/engineering-playbook/issues/11)).
 
 ## [0.6.0] - 2026-10-11
 

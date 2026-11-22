@@ -65,6 +65,8 @@ cost SHOULD include an ADR or update to the topology documentation.
 
 ## Related Standards
 
+- Implementing rules inside a service or module:
+  [Software Design Standards](../software-design/README.md).
 - User journeys, screen behavior and accessible interaction:
   [UX And Screen Design Standards](../ux/README.md).
 - Verification of observable behavior: [Testing Standards](../testing/README.md).
