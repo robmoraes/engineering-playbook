@@ -27,6 +27,7 @@ Those belong in [Templates](../templates/) or
 | Folder | Intended content |
 | --- | --- |
 | [containers](./containers/) | Single-purpose Docker/runtime fragments |
+| [databases](./databases/) | PostgreSQL query plans and index measurement |
 | [delivery](./delivery/) | Small workflow and validation patterns |
 | [observability](./observability/) | Metric, log, query and alert fragments |
 | [operations](./operations/) | Read-only diagnostic command patterns |

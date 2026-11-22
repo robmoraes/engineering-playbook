@@ -26,6 +26,9 @@ than a software API compatibility contract.
 - Started the Databases book with a PostgreSQL reservation schema and a
   two-session exercise showing how commit and rollback affect competing claims
   ([#14](https://github.com/robmoraes/engineering-playbook/issues/14)).
+- Added a PostgreSQL reservation index experiment with measured query plans,
+  insert times and storage costs for a customer booking lookup
+  ([#15](https://github.com/robmoraes/engineering-playbook/issues/15)).
 
 ## [0.6.0] - 2026-10-11
 
