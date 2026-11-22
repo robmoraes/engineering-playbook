@@ -28,6 +28,7 @@ programming.
 | [DevOps](./devops/) | Shared ownership, delivery flow, feedback, automation and continuous improvement |
 | [SRE](./sre/) | Service-level objectives, production readiness, sustainable response and reliability engineering |
 | [Architecture](./architecture/) | Technical rationale, application standards, spec-driven workflow and decision records |
+| [Software Design](./software-design/) | Business rule ownership, shared application behavior and concurrency guarantees |
 | [UX](./ux/) | User journeys, intuitive screens, efficient forms, accessible interaction and usable recovery |
 | [CI/CD](./ci-cd/) | Integration, releases and deployment pipelines |
 | [Docker](./docker/) | Container builds, images and runtime conventions |
@@ -40,6 +41,9 @@ programming.
 | [Runbooks](./runbooks/) | Operational and recovery procedures |
 | [Security](./security/) | Secrets, access and credential practices |
 | [Testing](./testing/) | Risk-focused Test Case design, execution evidence and lifecycle standards |
+
+Planned additions to the playbook are tracked in
+[GitHub Issues](https://github.com/robmoraes/engineering-playbook/issues).
 
 ## Social Preview
 
