@@ -8,5 +8,6 @@ check the result from another connection.
 | When you need to… | Read |
 | --- | --- |
 | Model a bookable slot and decide which reservation can commit | [A reservation schema under contention](./reservation-schema.md) |
+| Decide whether a customer lookup earns the cost of an index | [Evaluating a reservation index](./reservation-index.md) |
 | Decide where the API and worker interpret the result | [Business rule placement](../software-design/business-rule-placement.md) |
 | Check how PostgreSQL implements the guarantee | [References and adoption notes](./references.md) |

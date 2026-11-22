@@ -18,3 +18,19 @@
   different claim as `SlotTaken` is the application's policy.
   [INSERT](https://www.postgresql.org/docs/current/sql-insert.html) and
   [transaction isolation](https://www.postgresql.org/docs/current/transaction-iso.html).
+
+## Evaluating an index
+
+- PostgreSQL uses statistics to estimate how many rows a predicate will
+  match. The lab refreshes statistics in both schemas before comparing
+  estimates with actual rows. [ANALYZE](https://www.postgresql.org/docs/17/sql-analyze.html).
+- A measured plan reports actual rows, loops, execution time and buffer
+  accesses. In this exercise we compare the top node's buffers across plans
+  and use child nodes to locate the work.
+  [Using EXPLAIN](https://www.postgresql.org/docs/17/using-explain.html).
+- Each additional index must stay synchronized with writes. We time a
+  committed insert batch and use `pg_relation_size` to report the candidate
+  index's main fork in bytes. Workload frequency and the decision to keep it
+  are local judgments.
+  [Index introduction](https://www.postgresql.org/docs/17/indexes-intro.html)
+  and [object size functions](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-ADMIN-DBSIZE).
