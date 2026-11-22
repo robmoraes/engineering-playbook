@@ -23,6 +23,9 @@ than a software API compatibility contract.
   and a worker into one operation, with characterization tests for contention,
   redelivery and stored outcomes
   ([#13](https://github.com/robmoraes/engineering-playbook/issues/13)).
+- Started the Databases book with a PostgreSQL reservation schema and a
+  two-session exercise showing how commit and rollback affect competing claims
+  ([#14](https://github.com/robmoraes/engineering-playbook/issues/14)).
 
 ## [0.6.0] - 2026-10-11
 

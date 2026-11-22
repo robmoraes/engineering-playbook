@@ -118,3 +118,5 @@ any remaining write path that can bypass the guarantee.
 
 For source guidance and the assumptions behind the SQL example, see the
 [adoption notes](./references.md).
+For the full schema and both transaction outcomes, see the
+[Databases reservation exercise](../databases/reservation-schema.md).
