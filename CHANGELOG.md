@@ -16,6 +16,9 @@ than a software API compatibility contract.
 - Started the Software Design book with business rule placement, a concurrent
   reservation example and verification guidance
   ([#11](https://github.com/robmoraes/engineering-playbook/issues/11)).
+- Added Software Design guidance on module dependencies, booking outcomes
+  and error handling across an HTTP API, a queue worker and a storage adapter
+  ([#12](https://github.com/robmoraes/engineering-playbook/issues/12)).
 
 ## [0.6.0] - 2026-10-11
 
