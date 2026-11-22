@@ -41,3 +41,16 @@
   immediate requeue loops. Here the worker acknowledges terminal outcomes
   after recording them and uses bounded retries for transient failures.
   [Consumer Acknowledgements and Publisher Confirms](https://www.rabbitmq.com/docs/confirms)
+
+## Safe refactoring
+
+- Michael Feathers describes characterization tests as a way to discover
+  and record existing behavior. Here the tests observe the HTTP response,
+  worker acknowledgement and stored reservation before the first edit.
+  [Characterization Testing](https://michaelfeathers.silvrback.com/characterization-testing)
+- Martin Fowler describes refactoring in small steps that preserve observable
+  behavior. His Extract Function example names a piece of existing logic
+  and replaces it with a call. Here we use that move to share the booking
+  decision and verify each caller as it switches over.
+  [Refactoring](https://refactoring.com/) and
+  [Extract Function](https://refactoring.com/catalog/extractFunction.html).

@@ -19,6 +19,10 @@ than a software API compatibility contract.
 - Added Software Design guidance on module dependencies, booking outcomes
   and error handling across an HTTP API, a queue worker and a storage adapter
   ([#12](https://github.com/robmoraes/engineering-playbook/issues/12)).
+- Added a worked refactoring example that moves a booking rule from an API
+  and a worker into one operation, with characterization tests for contention,
+  redelivery and stored outcomes
+  ([#13](https://github.com/robmoraes/engineering-playbook/issues/13)).
 
 ## [0.6.0] - 2026-10-11
 
