@@ -34,3 +34,23 @@
   are local judgments.
   [Index introduction](https://www.postgresql.org/docs/17/indexes-intro.html)
   and [object size functions](https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-ADMIN-DBSIZE).
+
+## Schema migrations
+
+- A row-level `BEFORE INSERT` trigger can change the row before PostgreSQL
+  checks constraints. The exercise uses one to copy a booking identity
+  supplied by either client into the other column.
+  [CREATE TRIGGER](https://www.postgresql.org/docs/17/sql-createtrigger.html).
+- Adding a check with `NOT VALID` enforces it on subsequent inserts and
+  updates. Validating it later scans existing rows with a weaker lock than
+  the one used to add it. The exercise commits validation before requesting
+  the stronger cutover lock.
+  [ALTER TABLE](https://www.postgresql.org/docs/17/sql-altertable.html).
+- PostgreSQL can replace a view's defining query while preserving its
+  existing output columns. The v2 client keeps the same read interface as
+  its data source changes from both columns to `booked_by_id` alone.
+  [CREATE VIEW](https://www.postgresql.org/docs/17/sql-createview.html).
+- PostgreSQL exposes connected sessions and their application names.
+  Before retiring v1, the playbook checks those observations against API
+  and worker revisions, job schedules and retry lifetimes.
+  [Activity statistics](https://www.postgresql.org/docs/17/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW).
