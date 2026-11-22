@@ -11,6 +11,7 @@ one change through every caller that can produce the same effect.
 | Agree on what users should observe | [Spec-driven development](../architecture/spec-driven-development.md) |
 | Decide which service owns the data | [Boundaries and service design](../architecture/boundaries-and-service-design.md) |
 | Implement one rule shared by an endpoint and a worker | [Business rule placement](./business-rule-placement.md) |
+| Define what callers can depend on and how they handle failures | [Module boundaries, dependencies and errors](./module-boundaries-and-errors.md) |
 | Record the expected results and evidence | [Test case standards](../testing/test-case-standards.md) |
 
 ## Applying the standard

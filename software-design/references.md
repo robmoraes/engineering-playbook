@@ -22,3 +22,22 @@
   session. The two-session exercise uses it to observe actual contention
   before allowing the first reservation to commit.
   [Session Information Functions](https://www.postgresql.org/docs/current/functions-info.html#FUNCTIONS-INFO-SESSION).
+
+## Module boundaries and failures
+
+- Cockburn describes application ports and technology-specific adapters.
+  Here booking owns the operations used by its callers and storage adapter.
+  The application wires a function or interface to a concrete implementation.
+  [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture)
+- AWS describes caller-provided request identifiers for recognizing a retry
+  after a lost response. Here retries carry the original actor, slot and
+  claim ID so the service can recover the stored confirmation.
+  [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/)
+- RFC 9110 defines HTTP status semantics. The booking example chooses
+  `409` for a competing claim and `503` for a temporary inability to
+  confirm a result. The claim ID and retry policy belong to the application.
+  [HTTP Semantics, status codes](https://www.rfc-editor.org/rfc/rfc9110.html#section-15)
+- RabbitMQ describes consumer acknowledgements, redelivery and the cost of
+  immediate requeue loops. Here the worker acknowledges terminal outcomes
+  after recording them and uses bounded retries for transient failures.
+  [Consumer Acknowledgements and Publisher Confirms](https://www.rabbitmq.com/docs/confirms)
