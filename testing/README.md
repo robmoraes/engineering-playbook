@@ -57,6 +57,7 @@ is not an accumulating execution log.
 | Document | Covers |
 | --- | --- |
 | [Test Case Standards](./test-case-standards.md) | Required content, behavior-oriented format, test data, traceability, execution and lifecycle |
+| [Choosing Automated Tests by Risk](./choosing-automated-tests.md) | Select the test dependencies, pipeline stage and rollout decision for a specific failure |
 | [References](./references.md) | External testing guidance and conventions adopted here |
 
 ## Non-Negotiable Defaults

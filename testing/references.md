@@ -39,3 +39,25 @@ referenced sources:
   limit;
 - automated and manual cases use the same expected-behavior model;
 - documentation depth grows with product risk and coordination needs.
+
+## Automated test selection
+
+- DORA recommends running reliable automated tests throughout delivery so
+  engineers can act on failures quickly. The playbook places each booking
+  check at the earliest stage with the dependencies it needs.
+  [Test automation](https://dora.dev/capabilities/test-automation/).
+- Google's testing guidance describes how the fidelity of a double limits
+  what a test can establish, and how the cost of maintaining larger tests
+  grows with their scope. The reservation guide uses a recording store for
+  a permission decision and a deployed journey to check that independently
+  configured components agree on a booking.
+  [Test Doubles](https://abseil.io/resources/swe-book/html/ch13.html)
+  and [Larger Testing](https://abseil.io/resources/swe-book/html/ch14.html).
+- Pact describes exercising a consumer against a mock provider and verifying
+  the resulting interactions against the provider. The playbook adopts
+  these two checks for the booking client's occupied-slot response.
+  [How Pact works](https://docs.pact.io/getting_started/how_pact_works).
+- PostgreSQL documents how a unique index handles a conflicting uncommitted
+  insert. The guide uses a disposable instance with overlapping transactions
+  to check the booking guarantee.
+  [Index uniqueness checks](https://www.postgresql.org/docs/17/index-unique-checks.html).
