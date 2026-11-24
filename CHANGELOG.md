@@ -36,6 +36,10 @@ than a software API compatibility contract.
   end-to-end checks by reservation risk and deciding which failures block
   merge, promotion or rollout
   ([#17](https://github.com/robmoraes/engineering-playbook/issues/17)).
+- Added a runnable PostgreSQL integration test that confirms a competing
+  claim is blocked before commit, checks both customers' outcomes and
+  verifies the final slot availability from a fresh connection
+  ([#18](https://github.com/robmoraes/engineering-playbook/issues/18)).
 
 ## [0.6.0] - 2026-10-11
 
