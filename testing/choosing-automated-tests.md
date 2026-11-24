@@ -47,6 +47,8 @@ the slot from a fresh connection and expect exactly Ana's claim. Two
 confirmations are a failure even if only one row survives. The
 [two-session exercise](../databases/reservation-schema.md) shows how to
 observe the wait and how the expected winner changes if Ana rolls back.
+Use the [runnable contention test](../examples/snippets/databases/README.md#test-the-last-available-slot)
+to automate the commit case and reproduce a timeout locally or in CI.
 
 Run this in **pull request validation** for changes to booking, its storage
 adapter or the schema. Block merge on a wrong outcome or if the test cannot
