@@ -9,53 +9,41 @@ than a software API compatibility contract.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-11-23
+
 ### Added
 
-- Added a CI-backed recovery drill for the reservation service, with
-  fresh-slot booking probes, a reversible database privilege change
-  and a measured recovery interval
-  ([#22](https://github.com/robmoraes/engineering-playbook/issues/22)).
-- Added a runnable reservation API, queue worker and PostgreSQL reference
-  service with a repeatable race that verifies both customers' outcomes
-  against the single committed claim
-  ([#21](https://github.com/robmoraes/engineering-playbook/issues/21)).
-- Added a Linux lab for tracing a failed file-creation request to the
-  service process's permissions and verifying recovery after restoring
-  group write access on the destination directory
-  ([#20](https://github.com/robmoraes/engineering-playbook/issues/20)).
-- Added a Linux troubleshooting lab that distinguishes two causes of an
-  HTTP 502 using the NGINX upstream error, backend PID and listening port,
-  then verifies recovery through the original route
-  ([#19](https://github.com/robmoraes/engineering-playbook/issues/19)).
+- Added a Software Design book that uses one reservation rule to show where
+  business logic belongs, how an HTTP API and a queue worker share booking
+  outcomes, and how to refactor both paths with characterization tests
+  ([#11](https://github.com/robmoraes/engineering-playbook/issues/11),
+  [#12](https://github.com/robmoraes/engineering-playbook/issues/12),
+  [#13](https://github.com/robmoraes/engineering-playbook/issues/13)).
+- Added a Databases book with PostgreSQL labs for competing reservations,
+  the query and write costs of a customer lookup index, and a two-version
+  schema migration with a resumable backfill and an application rollback window
+  ([#14](https://github.com/robmoraes/engineering-playbook/issues/14),
+  [#15](https://github.com/robmoraes/engineering-playbook/issues/15),
+  [#16](https://github.com/robmoraes/engineering-playbook/issues/16)).
+- Expanded Testing with a guide to choosing checks by reservation risk and
+  deciding which failures block delivery. A runnable PostgreSQL contention
+  test checks both customers' outcomes and the final slot availability
+  ([#17](https://github.com/robmoraes/engineering-playbook/issues/17),
+  [#18](https://github.com/robmoraes/engineering-playbook/issues/18)).
+- Added two Linux troubleshooting labs. One distinguishes two causes of an
+  NGINX HTTP 502 using the upstream error, backend process and listening
+  port. The other traces a failed file write to directory permissions.
+  Both verify recovery by retrying the original request
+  ([#19](https://github.com/robmoraes/engineering-playbook/issues/19),
+  [#20](https://github.com/robmoraes/engineering-playbook/issues/20)).
+- Added a runnable reservation API and queue worker backed by PostgreSQL,
+  with a repeatable race for the same slot. A CI recovery drill deploys the
+  tested image, revokes and restores write access, and measures the time
+  until a fresh booking succeeds while the original reservation stays intact
+  ([#21](https://github.com/robmoraes/engineering-playbook/issues/21),
+  [#22](https://github.com/robmoraes/engineering-playbook/issues/22)).
 - Added an illustrated repository cover and a GitHub-ready social preview
   image, with upload instructions and portfolio-platform limitations.
-- Started the Software Design book with business rule placement, a concurrent
-  reservation example and verification guidance
-  ([#11](https://github.com/robmoraes/engineering-playbook/issues/11)).
-- Added Software Design guidance on module dependencies, booking outcomes
-  and error handling across an HTTP API, a queue worker and a storage adapter
-  ([#12](https://github.com/robmoraes/engineering-playbook/issues/12)).
-- Added a worked refactoring example that moves a booking rule from an API
-  and a worker into one operation, with characterization tests for contention,
-  redelivery and stored outcomes
-  ([#13](https://github.com/robmoraes/engineering-playbook/issues/13)).
-- Started the Databases book with a PostgreSQL reservation schema and a
-  two-session exercise showing how commit and rollback affect competing claims
-  ([#14](https://github.com/robmoraes/engineering-playbook/issues/14)).
-- Added a PostgreSQL reservation index experiment with measured query plans,
-  insert times and storage costs for a customer booking lookup
-  ([#15](https://github.com/robmoraes/engineering-playbook/issues/15)).
-- Added a two-version PostgreSQL migration rehearsal covering cross-version
-  reads and writes, a resumable backfill and the application rollback window
-  ([#16](https://github.com/robmoraes/engineering-playbook/issues/16)).
-- Added a Testing guide for choosing unit, integration, contract and
-  end-to-end checks by reservation risk and deciding which failures block
-  merge, promotion or rollout
-  ([#17](https://github.com/robmoraes/engineering-playbook/issues/17)).
-- Added a runnable PostgreSQL integration test that confirms a competing
-  claim is blocked before commit, checks both customers' outcomes and
-  verifies the final slot availability from a fresh connection
-  ([#18](https://github.com/robmoraes/engineering-playbook/issues/18)).
 
 ## [0.6.0] - 2026-10-11
 
@@ -144,7 +132,8 @@ than a software API compatibility contract.
 - Repository guidance for contribution practices and trunk-based delivery,
   with documented criteria for Gitflow where release needs justify it.
 
-[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/robmoraes/engineering-playbook/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robmoraes/engineering-playbook/compare/v0.3.2...v0.4.0
