@@ -193,10 +193,12 @@ def main():
     require(metadata == f"{image_id} {revision}", "Candidate image ID or source revision label differs")
     project = f"booking-drill-{uuid4().hex}"
     os.environ["RESERVATION_PORT"] = "0"
+    files = ["-f", str(SERVICE / "compose.yaml"), "-f", str(HERE / "tested-image.yaml")]
+    if os.environ.get("RESERVATION_SUBNET"):
+        files.extend(["-f", str(SERVICE / "compose.subnet.yaml")])
 
     def compose(*args, timeout=30):
-        return command("docker", "compose", "-p", project, "-f", str(SERVICE / "compose.yaml"),
-                       "-f", str(HERE / "tested-image.yaml"), *args, timeout=timeout)
+        return command("docker", "compose", "-p", project, *files, *args, timeout=timeout)
 
     data = {
         "project": project, "source_revision": revision, "image_ref": image, "image_id": image_id,

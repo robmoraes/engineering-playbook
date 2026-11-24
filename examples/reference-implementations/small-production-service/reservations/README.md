@@ -121,7 +121,9 @@ docker compose exec -T worker python worker.py result ben 42 b1
 - Before startup you can export `RESERVATION_PORT` to change the host port.
   Docker allocates the project subnet by default. If its address pool is
   exhausted, set `RESERVATION_SUBNET` to an unused private CIDR that does
-  not overlap your Docker networks, host routes or VPN.
+  not overlap your Docker networks, host routes or VPN. In the Linux lab
+  shell also export `COMPOSE_FILE=compose.yaml:compose.subnet.yaml` before
+  running the commands so Compose loads the [subnet override](./compose.subnet.yaml).
 - PostgreSQL initializes the role, tables and slot 42 on the first start
   with an empty named volume. To override the lab passwords, set
   `RESERVATION_APP_PASSWORD` and `RESERVATION_ADMIN_PASSWORD` before this

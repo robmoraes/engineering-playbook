@@ -53,9 +53,3 @@ services:
 
 volumes:
   reservation-data:
-
-networks:
-  default:
-    ipam:
-      config:
-        - subnet: ${RESERVATION_SUBNET:-}
