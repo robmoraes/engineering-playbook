@@ -1,0 +1,13 @@
+{
+  "pipeline_url": "https://github.com/robmoraes/engineering-playbook/actions/runs/45300194614/attempts/1",
+  "source_revision": "ff7ffedcf819927166b890cb087f90ae47102d4e",
+  "image_id": "sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9",
+  "python_base": "python:3.13-slim-bookworm@sha256:a5a7017efc5969e00ae2b91c8eb0631049a569652aa4ffc4501769049ae45c72",
+  "postgres_image": "postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73",
+  "psycopg": "3.3.9",
+  "test": {
+    "command": "python scenario.py",
+    "result": "success",
+    "log": "contention.log"
+  }
+}

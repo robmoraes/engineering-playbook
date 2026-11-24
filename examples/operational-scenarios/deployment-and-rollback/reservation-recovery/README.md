@@ -22,6 +22,33 @@ workflow in GitHub Actions and use **Run workflow**. Open the run summary
 for the test result, commit and image ID. Its downloadable evidence includes
 the contention test output, the pipeline record and the deployment timeline.
 
+## Recorded drill
+
+On 2026-11-24, CI passed the API/worker contention test for revision
+`ff7ffed`. The drill verified that both deployed containers used the tested
+image ID, `sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9`,
+and checked both IDs again after recovery.
+[CI run](https://github.com/robmoraes/engineering-playbook/actions/runs/45300194614/attempts/1)
+· [Tested revision](https://github.com/robmoraes/engineering-playbook/commit/ff7ffedcf819927166b890cb087f90ae47102d4e)
+· [Pipeline record](./evidence/pipeline.json)
+· [Contention test output](./evidence/contention.log)
+
+| Time (UTC) | Observation |
+| --- | --- |
+| 00:49:41.041 | The API confirmed control reservation `control-42` for Ana on slot 42. PostgreSQL held the matching row. |
+| 00:49:41.117 | The first scheduled probe booked slot 1001. The drill then revoked the application's insert privilege. |
+| 00:49:43.118 | The booking for slot 1002 returned `500 InternalError`. The API logged `InsufficientPrivilege` for the same claim, `probe-1002`. |
+| 00:49:45.118 | Slot 1003 also returned `500`. During the fault, `/ready` returned `200` and the control reservation was still present. |
+| 00:49:45.338 | PostgreSQL confirmed that the restored grant allowed inserts again. |
+| 00:49:47.120 | Slot 1004 returned `201 Confirmed`. PostgreSQL held `probe-1004`, the earlier success on slot 1001 and the original control. Neither failed claim had a row. |
+
+**Observed booking recovery took 4.002 seconds** (00:49:47.120 minus
+00:49:43.118). Probes ran every two seconds with zero missed samples. The
+interval includes the wait for a second failure before the automatic repair
+and the wait for the next booking probe. To reproduce the calculation, use
+the `completed_utc` values for slots 1002 and 1004 in the
+[deployment and probe record](./evidence/drill.json).
+
 ## Follow the drill
 
 | Phase | Operator action and evidence |

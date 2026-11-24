@@ -1,0 +1,143 @@
+{
+  "project": "booking-drill-3bcde3916e2849c289e0f0467be4480d",
+  "source_revision": "ff7ffedcf819927166b890cb087f90ae47102d4e",
+  "image_ref": "reservation-candidate:ff7ffedcf819927166b890cb087f90ae47102d4e",
+  "image_id": "sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9",
+  "pipeline_url": "https://github.com/robmoraes/engineering-playbook/actions/runs/45300194614/attempts/1",
+  "probe_interval_seconds": 2,
+  "policy_changes": [
+    {
+      "action": "deploy fault",
+      "issued_utc": "2026-11-24T00:49:41.117Z",
+      "verified_utc": "2026-11-24T00:49:41.188Z",
+      "sql": "REVOKE INSERT ON slot_claims FROM reservation_app",
+      "can_insert": false
+    },
+    {
+      "action": "restore policy",
+      "issued_utc": "2026-11-24T00:49:45.265Z",
+      "verified_utc": "2026-11-24T00:49:45.338Z",
+      "sql": "GRANT INSERT ON slot_claims TO reservation_app",
+      "can_insert": true
+    }
+  ],
+  "probes": [
+    {
+      "started_utc": "2026-11-24T00:49:41.111Z",
+      "completed_utc": "2026-11-24T00:49:41.117Z",
+      "slot_id": 1001,
+      "claim_id": "probe-1001",
+      "http_status": 201,
+      "response": {
+        "claim_id": "probe-1001",
+        "outcome": "Confirmed"
+      },
+      "tick": 0
+    },
+    {
+      "started_utc": "2026-11-24T00:49:43.111Z",
+      "completed_utc": "2026-11-24T00:49:43.118Z",
+      "slot_id": 1002,
+      "claim_id": "probe-1002",
+      "http_status": 500,
+      "response": {
+        "claim_id": "probe-1002",
+        "error": "InternalError"
+      },
+      "tick": 1
+    },
+    {
+      "started_utc": "2026-11-24T00:49:45.111Z",
+      "completed_utc": "2026-11-24T00:49:45.118Z",
+      "slot_id": 1003,
+      "claim_id": "probe-1003",
+      "http_status": 500,
+      "response": {
+        "claim_id": "probe-1003",
+        "error": "InternalError"
+      },
+      "tick": 2
+    },
+    {
+      "started_utc": "2026-11-24T00:49:47.111Z",
+      "completed_utc": "2026-11-24T00:49:47.120Z",
+      "slot_id": 1004,
+      "claim_id": "probe-1004",
+      "http_status": 201,
+      "response": {
+        "claim_id": "probe-1004",
+        "outcome": "Confirmed"
+      },
+      "tick": 3
+    }
+  ],
+  "result": "passed",
+  "deployed_images": {
+    "api": "sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9",
+    "worker": "sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9"
+  },
+  "deployment_verified_utc": "2026-11-24T00:49:40.783Z",
+  "public_endpoint": "http://127.0.0.1:32769",
+  "baseline": {
+    "started_utc": "2026-11-24T00:49:41.032Z",
+    "completed_utc": "2026-11-24T00:49:41.041Z",
+    "slot_id": 42,
+    "claim_id": "control-42",
+    "http_status": 201,
+    "response": {
+      "claim_id": "control-42",
+      "outcome": "Confirmed"
+    }
+  },
+  "baseline_rows": [
+    [
+      42,
+      "ana",
+      "control-42"
+    ]
+  ],
+  "first_failed_utc": "2026-11-24T00:49:43.118Z",
+  "readiness_during_fault": {
+    "http_status": 200,
+    "response": {
+      "ready": true
+    }
+  },
+  "operator_signal": "2026-11-24T00:49:43.118591426Z 172.18.0.1 - - [24/Nov/2026 00:49:43] claim probe-1002: InsufficientPrivilege",
+  "rows_during_fault": [
+    [
+      42,
+      "ana",
+      "control-42"
+    ],
+    [
+      1001,
+      "ana",
+      "probe-1001"
+    ]
+  ],
+  "first_recovered_utc": "2026-11-24T00:49:47.120Z",
+  "final_rows": [
+    [
+      42,
+      "ana",
+      "control-42"
+    ],
+    [
+      1001,
+      "ana",
+      "probe-1001"
+    ],
+    [
+      1004,
+      "ana",
+      "probe-1004"
+    ]
+  ],
+  "restored_images": {
+    "api": "sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9",
+    "worker": "sha256:3170ece157c3e04417fd76dcb01382cef7638f0906465ac180da5468514348b9"
+  },
+  "observed_recovery_seconds": 4.002,
+  "missed_ticks": 0
+}

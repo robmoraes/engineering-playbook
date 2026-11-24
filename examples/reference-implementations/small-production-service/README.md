@@ -11,6 +11,8 @@ delivery automation, monitoring and documented recovery.
 Deploy the tested reservation image in a disposable lab, introduce a
 reversible write-permission failure and measure recovery using
 [booking probes and a stored control reservation](../../operational-scenarios/deployment-and-rollback/reservation-recovery/README.md).
+The [recorded drill](../../operational-scenarios/deployment-and-rollback/reservation-recovery/README.md#recorded-drill)
+links the tested image to the failed booking, the first recovered booking and the final database rows.
 
 Implementations must state accepted single points of failure, backup
 and access strategy, cost assumptions and the conditions that would require a
