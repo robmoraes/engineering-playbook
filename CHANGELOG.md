@@ -11,6 +11,10 @@ than a software API compatibility contract.
 
 ### Added
 
+- Added a Linux lab for tracing a failed file-creation request to the
+  service process's permissions and verifying recovery after restoring
+  group write access on the destination directory
+  ([#20](https://github.com/robmoraes/engineering-playbook/issues/20)).
 - Added a Linux troubleshooting lab that distinguishes two causes of an
   HTTP 502 using the NGINX upstream error, backend PID and listening port,
   then verifies recovery through the original route

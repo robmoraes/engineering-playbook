@@ -30,6 +30,12 @@ Database restore tested                  "Volume exists" treated as backup
 | Object storage | Uploads, artifacts, backups or immutable assets fit object access | Application must use object semantics |
 | Managed database/storage service | Durable production data merits reduced operational burden | Provider cost and service constraints |
 
+For file-backed writes, record the writer's UID and groups together with
+the owner, group and mode of the destination directory. The
+[service write-permission lab](../examples/operational-scenarios/runtime-and-platform/service-write-permission/README.md)
+shows how a service and a directory owner can see different results on the
+same path.
+
 ### Shared Storage and EFS/NFS Considerations
 
 Shared filesystems may simplify multi-node access, but they do not solve

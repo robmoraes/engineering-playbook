@@ -33,6 +33,12 @@ Check:
 Avoid mutating the live container to make it work temporarily. Diagnose,
 correct the defined artifact/configuration and redeploy a recorded version.
 
+When a running service reports a denied write, match the failing request
+to the path in its log, then check the process identity and directory
+permissions inside the workload. Verify the repair by creating a fresh file
+through the service. Rehearse this in the
+[Linux write-permission lab](../examples/operational-scenarios/runtime-and-platform/service-write-permission/README.md).
+
 ## Docker Swarm Service Troubleshooting
 
 ### Scope
