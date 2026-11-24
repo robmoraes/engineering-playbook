@@ -5,6 +5,10 @@ import re
 import psycopg
 
 
+class SlotNotFound(Exception):
+    """The requested slot has no parent row."""
+
+
 def connect(application_name):
     conn = psycopg.connect(
         application_name=application_name,
@@ -25,12 +29,19 @@ def reserve(conn, actor_id, slot_id, claim_id):
     if actor_id not in ("ana", "ben"):
         return "Forbidden"
 
-    inserted = conn.execute(
-        """INSERT INTO slot_claims (slot_id, actor_id, claim_id)
-           VALUES (%s, %s, %s) ON CONFLICT (slot_id) DO NOTHING
-           RETURNING claim_id""",
-        (slot_id, actor_id, claim_id),
-    ).fetchone()
+    try:
+        inserted = conn.execute(
+            """INSERT INTO slot_claims (slot_id, actor_id, claim_id)
+               VALUES (%s, %s, %s) ON CONFLICT (slot_id) DO NOTHING
+               RETURNING claim_id""",
+            (slot_id, actor_id, claim_id),
+        ).fetchone()
+    except psycopg.errors.ForeignKeyViolation as error:
+        if (error.diag.table_name, error.diag.constraint_name) == (
+            "slot_claims", "slot_claims_slot_id_fkey"
+        ):
+            raise SlotNotFound(slot_id) from error
+        raise
     if inserted is not None:
         return "Confirmed"
 

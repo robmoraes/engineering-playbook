@@ -1,6 +1,7 @@
-"""HTTP entry point for the local, one-slot reservation service."""
+"""HTTP entry point for the local reservation service."""
 
 import json
+import re
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import psycopg
@@ -66,9 +67,11 @@ class ReservationHandler(BaseHTTPRequestHandler):
         return data["claim_id"]
 
     def do_POST(self):
-        if self.path != "/slots/42/claims":
+        match = re.fullmatch(r"/slots/([1-9][0-9]{0,9})/claims", self.path)
+        if match is None or int(match[1]) > 2_147_483_647:
             self.respond(404, error="NotFound")
             return
+        slot_id = int(match[1])
         actor = LAB_ACTORS.get(self.headers.get("Authorization"))
         if actor is None:
             self.respond(401, error="Unauthenticated")
@@ -82,9 +85,12 @@ class ReservationHandler(BaseHTTPRequestHandler):
         failure = "StoreUnavailable"
         try:
             with booking.connect("booking-api") as conn:
-                result = booking.reserve(conn, actor, 42, claim_id)
+                result = booking.reserve(conn, actor, slot_id, claim_id)
                 # Exiting this context commits. A lost reply here leaves the result unknown.
                 failure = "CommitUnknown"
+        except booking.SlotNotFound:
+            self.respond(404, claim_id=claim_id, error="SlotNotFound")
+            return
         except (psycopg.OperationalError, psycopg.InterfaceError):
             self.respond(503, claim_id=claim_id, error=failure)
             return

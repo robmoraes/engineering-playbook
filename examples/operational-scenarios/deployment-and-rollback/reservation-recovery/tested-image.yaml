@@ -1,0 +1,7 @@
+services:
+  api:
+    image: ${RESERVATION_IMAGE:?Set RESERVATION_IMAGE to the tested local image}
+    pull_policy: never
+  worker:
+    image: ${RESERVATION_IMAGE:?Set RESERVATION_IMAGE to the tested local image}
+    pull_policy: never

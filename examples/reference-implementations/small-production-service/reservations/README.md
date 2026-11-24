@@ -86,6 +86,10 @@ docker compose exec -T db psql -X -v ON_ERROR_STOP=1 -U postgres -d reservations
   -c 'TRUNCATE booking_jobs, slot_claims;'
 ```
 
+The API accepts `POST /slots/{slot_id}/claims` for an existing slot with a
+positive integer ID. The default fixture contains only slot 42. An authorized
+caller requesting an unseeded slot receives HTTP `404` with `SlotNotFound`.
+
 Submit Ana's claim first. Expect HTTP `201` and a JSON response identifying
 `a1` as `Confirmed`. Repeating this exact request returns HTTP `200` with the
 same confirmation. An unauthenticated caller gets `401`. The authenticated

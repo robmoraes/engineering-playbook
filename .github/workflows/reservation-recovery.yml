@@ -1,0 +1,96 @@
+name: Reservation recovery drill
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/reservation-recovery.yml'
+      - 'examples/reference-implementations/small-production-service/reservations/**'
+      - '!examples/reference-implementations/small-production-service/reservations/**/*.md'
+      - 'examples/operational-scenarios/deployment-and-rollback/reservation-recovery/*.py'
+      - 'examples/operational-scenarios/deployment-and-rollback/reservation-recovery/*.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  test_and_recover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      SERVICE: examples/reference-implementations/small-production-service/reservations
+      DRILL: examples/operational-scenarios/deployment-and-rollback/reservation-recovery
+      SOURCE_REVISION: ${{ github.event.pull_request.head.sha || github.sha }}
+      RESERVATION_IMAGE: reservation-candidate:${{ github.event.pull_request.head.sha || github.sha }}
+      PIPELINE_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt }}
+      RESERVATION_PORT: '0'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out the candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.SOURCE_REVISION }}
+          persist-credentials: false
+
+      - name: Build the application image once
+        id: build
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_REVISION"
+          mkdir "$RUNNER_TEMP/evidence"
+          docker build --label "org.opencontainers.image.revision=$SOURCE_REVISION" \
+            --tag "$RESERVATION_IMAGE" "$SERVICE"
+          image_id=$(docker image inspect --format '{{.Id}}' "$RESERVATION_IMAGE")
+          printf 'EXPECTED_IMAGE_ID=%s\n' "$image_id" >> "$GITHUB_ENV"
+
+      - name: Verify two competing bookings against the candidate
+        id: contention
+        run: |
+          compose=(docker compose --project-name "reservation-ci-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+                   -f "$SERVICE/compose.yaml" -f "$DRILL/tested-image.yaml")
+          trap '"${compose[@]}" down --volumes' EXIT
+          "${compose[@]}" up --no-build --wait --wait-timeout 90
+          for service in api worker; do
+            actual=$(docker inspect --format '{{.Image}}' "$("${compose[@]}" ps -q "$service")")
+            test "$actual" = "$EXPECTED_IMAGE_ID"
+          done
+          "${compose[@]}" exec -T api python scenario.py | tee "$RUNNER_TEMP/evidence/contention.log"
+
+      - name: Record the build inputs and test result
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        env:
+          TEST_RESULT: ${{ steps.contention.outcome }}
+        run: |
+          base=$(awk '$1 == "FROM" {print $2}' "$SERVICE/Dockerfile")
+          db=$(docker compose -f "$SERVICE/compose.yaml" config --format json | jq -r '.services.db.image')
+          driver=$(docker run --rm --network none "$RESERVATION_IMAGE" python -c 'import psycopg; print(psycopg.__version__)')
+          jq -n --arg base "$base" --arg db "$db" --arg driver "$driver" '{
+            pipeline_url: env.PIPELINE_URL, source_revision: env.SOURCE_REVISION,
+            image_id: env.EXPECTED_IMAGE_ID, python_base: $base, postgres_image: $db, psycopg: $driver,
+            test: {command: "python scenario.py", result: env.TEST_RESULT, log: "contention.log"}
+          }' > "$RUNNER_TEMP/evidence/pipeline.json"
+
+      - name: Deploy the tested image and measure recovery
+        run: python3 "$DRILL/drill.py" --output "$RUNNER_TEMP/evidence/drill.json"
+
+      - name: Upload the pipeline and lab evidence
+        id: upload
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: reservation-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/evidence/
+          if-no-files-found: error
+
+      - name: Summarize the tested artifact
+        if: ${{ !cancelled() && steps.upload.outcome == 'success' }}
+        env:
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+          TEST_RESULT: ${{ steps.contention.outcome }}
+        run: |
+          {
+            printf 'Source commit %s\n\n' "$SOURCE_REVISION"
+            printf 'Application image ID %s\n\n' "$EXPECTED_IMAGE_ID"
+            printf 'Contention test **%s**. [Download the evidence](%s).\n' "$TEST_RESULT" "$ARTIFACT_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
