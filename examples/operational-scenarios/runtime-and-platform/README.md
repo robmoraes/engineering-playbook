@@ -1,8 +1,11 @@
 # Runtime and Platform Scenarios
 
-Future troubleshooting exercises for container startup failure, task/Pod
-health, Docker Swarm scheduling or manager issues, capacity exhaustion and
-shared platform dependency failure.
+Use these exercises to investigate workload health, filesystem access,
+scheduling, capacity and shared platform dependencies.
 
 Each scenario must distinguish a read-only diagnosis from an action requiring
 runtime or cluster authority.
+
+| Symptom | Exercise |
+| --- | --- |
+| A service passes its health check but fails to create a file | [Trace a failed write to the service's Linux permissions](./service-write-permission/README.md) |
