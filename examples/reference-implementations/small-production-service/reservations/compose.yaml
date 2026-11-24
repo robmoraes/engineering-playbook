@@ -1,0 +1,61 @@
+name: playbook-reservations
+
+x-app: &app
+  build: .
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  environment:
+    PGHOST: db
+    PGDATABASE: reservations
+    PGUSER: reservation_app
+    PGPASSWORD: ${RESERVATION_APP_PASSWORD:-synthetic-app-password}
+  depends_on:
+    db:
+      condition: service_healthy
+
+services:
+  db:
+    image: postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73
+    environment:
+      POSTGRES_DB: reservations
+      POSTGRES_PASSWORD: ${RESERVATION_ADMIN_PASSWORD:-synthetic-init-password}
+      RESERVATION_APP_PASSWORD: ${RESERVATION_APP_PASSWORD:-synthetic-app-password}
+    volumes:
+      - reservation-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/10-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "postgres", "-d", "reservations"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  api:
+    <<: *app
+    command: ["python", "api.py"]
+    ports:
+      - "127.0.0.1:${RESERVATION_PORT:-18084}:8080"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/ready', timeout=2).close()"]
+      interval: 3s
+      timeout: 4s
+      retries: 15
+
+  worker:
+    <<: *app
+    command: ["python", "worker.py"]
+    healthcheck:
+      test: ["CMD", "python", "worker.py", "ready"]
+      interval: 3s
+      timeout: 4s
+      retries: 15
+
+volumes:
+  reservation-data:
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: ${RESERVATION_SUBNET:-}
