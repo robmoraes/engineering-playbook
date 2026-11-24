@@ -11,6 +11,10 @@ than a software API compatibility contract.
 
 ### Added
 
+- Added a CI-backed recovery drill for the reservation service, with
+  fresh-slot booking probes, a reversible database privilege change
+  and a measured recovery interval
+  ([#22](https://github.com/robmoraes/engineering-playbook/issues/22)).
 - Added a runnable reservation API, queue worker and PostgreSQL reference
   service with a repeatable race that verifies both customers' outcomes
   against the single committed claim

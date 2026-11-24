@@ -86,6 +86,10 @@ docker compose exec -T db psql -X -v ON_ERROR_STOP=1 -U postgres -d reservations
   -c 'TRUNCATE booking_jobs, slot_claims;'
 ```
 
+The API accepts `POST /slots/{slot_id}/claims` for an existing slot with a
+positive integer ID. The default fixture contains only slot 42. An authorized
+caller requesting an unseeded slot receives HTTP `404` with `SlotNotFound`.
+
 Submit Ana's claim first. Expect HTTP `201` and a JSON response identifying
 `a1` as `Confirmed`. Repeating this exact request returns HTTP `200` with the
 same confirmation. An unauthenticated caller gets `401`. The authenticated
@@ -117,7 +121,9 @@ docker compose exec -T worker python worker.py result ben 42 b1
 - Before startup you can export `RESERVATION_PORT` to change the host port.
   Docker allocates the project subnet by default. If its address pool is
   exhausted, set `RESERVATION_SUBNET` to an unused private CIDR that does
-  not overlap your Docker networks, host routes or VPN.
+  not overlap your Docker networks, host routes or VPN. In the Linux lab
+  shell also export `COMPOSE_FILE=compose.yaml:compose.subnet.yaml` before
+  running the commands so Compose loads the [subnet override](./compose.subnet.yaml).
 - PostgreSQL initializes the role, tables and slot 42 on the first start
   with an empty named volume. To override the lab passwords, set
   `RESERVATION_APP_PASSWORD` and `RESERVATION_ADMIN_PASSWORD` before this

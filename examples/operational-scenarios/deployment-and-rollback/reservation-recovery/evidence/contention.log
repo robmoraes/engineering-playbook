@@ -1,0 +1,5 @@
+{"actor_id": "ben", "slot_id": 42, "claim_id": "b1", "outcome": "Pending"}
+Both writers waiting on scenario PID 89: [('booking-api', 90), ('booking-worker', 71)]
+API ana/42/a1: HTTP 409 {'claim_id': 'a1', 'outcome': 'SlotTaken'}
+Worker ben/42/b1: Confirmed
+PASS: one committed reservation (42, 'ben', 'b1')

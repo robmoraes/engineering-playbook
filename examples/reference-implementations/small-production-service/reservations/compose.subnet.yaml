@@ -1,0 +1,5 @@
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: ${RESERVATION_SUBNET:?Set an unused private CIDR for the lab}
