@@ -47,6 +47,10 @@ TLS renewal alert owned by platform      Certificate expiry found by users
 Authenticated operations route           Public Grafana admin endpoint by default
 ```
 
+When the proxy reports a connection refusal, compare the configured upstream
+with the address, port and PID of the backend listener. Practice that check
+in the [Linux reverse proxy lab](../examples/operational-scenarios/network-and-tls/reverse-proxy-502/README.md).
+
 ### Load Balancing Tradeoffs
 
 | Approach | Appropriate for | Consequence |

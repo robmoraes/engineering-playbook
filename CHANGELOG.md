@@ -11,6 +11,10 @@ than a software API compatibility contract.
 
 ### Added
 
+- Added a Linux troubleshooting lab that distinguishes two causes of an
+  HTTP 502 using the NGINX upstream error, backend PID and listening port,
+  then verifies recovery through the original route
+  ([#19](https://github.com/robmoraes/engineering-playbook/issues/19)).
 - Added an illustrated repository cover and a GitHub-ready social preview
   image, with upload instructions and portfolio-platform limitations.
 - Started the Software Design book with business rule placement, a concurrent

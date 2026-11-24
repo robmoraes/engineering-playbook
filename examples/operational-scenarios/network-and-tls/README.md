@@ -1,8 +1,9 @@
 # Network and TLS Scenarios
 
-Future investigation examples for DNS failures, certificate renewal or
-hostname errors, reverse proxy routing failures and internal service
-connectivity.
+This family covers DNS, certificates, reverse proxy routing and internal
+connectivity. Use synthetic endpoints and confirm recovery through the
+same route that first showed the symptom.
 
-Scenarios should validate the actual client-facing path and use synthetic
-domains or endpoints safe for publication.
+| Symptom | Exercise |
+| --- | --- |
+| NGINX returns HTTP 502 for a backend request | [Distinguish a stopped backend from one listening on the wrong port](./reverse-proxy-502/README.md) |

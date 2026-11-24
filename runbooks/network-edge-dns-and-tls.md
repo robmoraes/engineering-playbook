@@ -89,6 +89,11 @@ Check proxy logs and metrics without exposing headers or credentials. Confirm
 whether the proxy is a shared failure domain before applying restart or
 configuration change.
 
+For a connection refusal, correlate a fresh proxy error with the backend
+process and its listening socket. Recheck the original route's status and
+body after recovery. The [HTTP 502 exercise](../examples/operational-scenarios/network-and-tls/reverse-proxy-502/README.md)
+walks through each observation for a stopped backend and a port mismatch.
+
 ## Internal Connectivity and Service Discovery
 
 For Docker Swarm:
