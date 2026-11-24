@@ -11,6 +11,10 @@ than a software API compatibility contract.
 
 ### Added
 
+- Added a runnable reservation API, queue worker and PostgreSQL reference
+  service with a repeatable race that verifies both customers' outcomes
+  against the single committed claim
+  ([#21](https://github.com/robmoraes/engineering-playbook/issues/21)).
 - Added a Linux lab for tracing a failed file-creation request to the
   service process's permissions and verifying recovery after restoring
   group write access on the destination directory

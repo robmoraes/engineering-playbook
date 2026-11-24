@@ -19,12 +19,12 @@ include:
 - limitations, cost and scaling tradeoffs;
 - ADRs for consequential choices where useful.
 
-## Planned Implementations
+## Implementation Catalog
 
 | Directory | Purpose |
 | --- | --- |
 | [local-lab](./local-lab/) | Safe local or disposable learning environments |
-| [small-production-service](./small-production-service/) | Production-oriented single service topology with explicit constraints |
+| [small-production-service](./small-production-service/) | [Runnable reservation API, worker and PostgreSQL](./small-production-service/reservations/README.md) with a one-slot contention scenario |
 | [platform-capability](./platform-capability/) | Shared capability such as ingress or telemetry serving multiple workloads |
 
 ## Boundaries
